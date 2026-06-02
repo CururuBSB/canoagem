@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acervo de Expedições de Canoagem</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --verde-escuro: #1a3a2a;
+    --verde-medio: #2d5a3d;
+    --verde-agua: #4a8c6a;
+    --dourado: #c8a84b;
+    --bege: #f5efe0;
+    --texto: #1a2a1e;
+    --texto-suave: #4a5e50;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--verde-escuro);
+    color: var(--bege);
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Fundo com textura */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(74,140,106,0.12) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(200,168,75,0.07) 0%, transparent 50%),
+      radial-gradient(ellipse at 60% 80%, rgba(45,90,61,0.2) 0%, transparent 55%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* HEADER */
+  header {
+    text-align: center;
+    padding: 72px 0 56px;
+    position: relative;
+  }
+
+  .header-line {
+    width: 60px;
+    height: 2px;
+    background: var(--dourado);
+    margin: 0 auto 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.2s;
+  }
+
+  .header-eyebrow {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--dourado);
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.3s;
+  }
+
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--bege);
+    margin: 18px 0 14px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.4s;
+  }
+
+  .header-anos {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--dourado);
+    letter-spacing: 2px;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.5s;
+  }
+
+  .header-desc {
+    font-size: 0.95rem;
+    color: rgba(245,239,224,0.55);
+    margin-top: 16px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.6s;
+  }
+
+  .header-ornament {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 36px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease forwards 0.7s;
+  }
+  .ornament-line { flex: 1; max-width: 120px; height: 1px; background: linear-gradient(90deg, transparent, var(--dourado)); }
+  .ornament-line.right { background: linear-gradient(90deg, var(--dourado), transparent); }
+  .ornament-icon { color: var(--dourado); font-size: 1.1rem; }
+
+  /* GRID DE EXPEDIÇÕES */
+  .expeditions-grid {
+    display: grid;
+    gap: 2px;
+    margin-top: 8px;
+  }
+
+  .expedition-item {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 0 24px;
+    padding: 18px 28px;
+    border-left: 2px solid transparent;
+    transition: all 0.25s ease;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards;
+    border-bottom: 1px solid rgba(245,239,224,0.06);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .expedition-item:hover {
+    border-left-color: var(--dourado);
+    background: rgba(200,168,75,0.06);
+    transform: translateX(4px);
+  }
+
+  .exp-year {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--dourado);
+    opacity: 0.85;
+    white-space: nowrap;
+  }
+
+  .exp-name {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--bege);
+    letter-spacing: 0.3px;
+  }
+
+  .exp-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .exp-link {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--verde-agua);
+    text-decoration: none;
+    border: 1px solid rgba(74,140,106,0.4);
+    padding: 4px 10px;
+    border-radius: 2px;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .exp-link:hover {
+    background: var(--verde-agua);
+    color: var(--verde-escuro);
+    border-color: var(--verde-agua);
+  }
+
+  .exp-link.video {
+    color: var(--dourado);
+    border-color: rgba(200,168,75,0.4);
+  }
+  .exp-link.video:hover {
+    background: var(--dourado);
+    color: var(--verde-escuro);
+    border-color: var(--dourado);
+  }
+
+  /* ANIMAÇÕES por linha */
+  .expedition-item:nth-child(1)  { animation-delay: 0.10s }
+  .expedition-item:nth-child(2)  { animation-delay: 0.14s }
+  .expedition-item:nth-child(3)  { animation-delay: 0.18s }
+  .expedition-item:nth-child(4)  { animation-delay: 0.22s }
+  .expedition-item:nth-child(5)  { animation-delay: 0.26s }
+  .expedition-item:nth-child(6)  { animation-delay: 0.30s }
+  .expedition-item:nth-child(7)  { animation-delay: 0.34s }
+  .expedition-item:nth-child(8)  { animation-delay: 0.38s }
+  .expedition-item:nth-child(9)  { animation-delay: 0.42s }
+  .expedition-item:nth-child(10) { animation-delay: 0.46s }
+  .expedition-item:nth-child(11) { animation-delay: 0.50s }
+  .expedition-item:nth-child(12) { animation-delay: 0.54s }
+  .expedition-item:nth-child(13) { animation-delay: 0.58s }
+  .expedition-item:nth-child(14) { animation-delay: 0.62s }
+  .expedition-item:nth-child(15) { animation-delay: 0.66s }
+  .expedition-item:nth-child(16) { animation-delay: 0.70s }
+  .expedition-item:nth-child(17) { animation-delay: 0.74s }
+  .expedition-item:nth-child(18) { animation-delay: 0.78s }
+  .expedition-item:nth-child(19) { animation-delay: 0.82s }
+  .expedition-item:nth-child(20) { animation-delay: 0.86s }
+  .expedition-item:nth-child(21) { animation-delay: 0.90s }
+  .expedition-item:nth-child(22) { animation-delay: 0.94s }
+  .expedition-item:nth-child(23) { animation-delay: 0.98s }
+  .expedition-item:nth-child(24) { animation-delay: 1.02s }
+  .expedition-item:nth-child(25) { animation-delay: 1.06s }
+  .expedition-item:nth-child(26) { animation-delay: 1.10s }
+  .expedition-item:nth-child(27) { animation-delay: 1.14s }
+  .expedition-item:nth-child(28) { animation-delay: 1.18s }
+  .expedition-item:nth-child(29) { animation-delay: 1.22s }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(245,239,224,0.1);
+    font-size: 0.8rem;
+    color: rgba(245,239,224,0.3);
+    letter-spacing: 1px;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .expedition-item {
+      grid-template-columns: 80px 1fr;
+      grid-template-rows: auto auto;
+      padding: 14px 16px;
+    }
+    .exp-links {
+      grid-column: 1 / -1;
+      justify-content: flex-start;
+      margin-top: 8px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="header-line"></div>
+    <div class="header-eyebrow">Acervo fotográfico</div>
+    <h1>Expedições de<br>Canoagem</h1>
+    <div class="header-anos">2005 – 2026</div>
+    <p class="header-desc">Fotos, vídeos e memórias de duas décadas de aventuras pelos rios do Brasil.</p>
+    <div class="header-ornament">
+      <div class="ornament-line"></div>
+      <div class="ornament-icon">🛶</div>
+      <div class="ornament-line right"></div>
+    </div>
+  </header>
+
+  <div class="expeditions-grid">
+
+    <div class="expedition-item">
+      <span class="exp-year">2026</span>
+      <span class="exp-name">Pindaíba</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/m9v47YQHUEsN6g4j7" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2025</span>
+      <span class="exp-name">Rio Garças</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/UR3LvD22ki93mKbQ8" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2024</span>
+      <span class="exp-name">Rio das Mortes</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/uyjTkDUnoEy2aUme9" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2023</span>
+      <span class="exp-name">Rio Cristalino</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/HfRaPcPBHWZJnwCd9" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2022</span>
+      <span class="exp-name">Ribeira de Iguape</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/zvNReesDEYcqHHKM9" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2022</span>
+      <span class="exp-name">Itaguari</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/89jy46BPt4EvnwqKA" target="_blank">Fotos 1</a>
+        <a class="exp-link" href="https://photos.app.goo.gl/bTAGxEXSX6N8avP66" target="_blank">Fotos 2</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2021</span>
+      <span class="exp-name">Araguaia</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/kb1BboUAmhTsWbC87" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2020</span>
+      <span class="exp-name">Paracatu</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/4knHjHYUZtkJJ9MV6" target="_blank">Fotos 1</a>
+        <a class="exp-link" href="https://photos.app.goo.gl/vZLcXkLYufs4cEvV6" target="_blank">Fotos 2</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2019</span>
+      <span class="exp-name">Von den Steinen</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/S7rGKEp4Vqud6LMJ7" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2018</span>
+      <span class="exp-name">Mortes</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/ms8rifiNUSxWVVWm7" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2018</span>
+      <span class="exp-name">Darro</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/ZwB79SADoG4itPw28" target="_blank">Fotos 1</a>
+        <a class="exp-link" href="https://photos.app.goo.gl/5dcUvqsG5TUX3bADA" target="_blank">Fotos 2</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2017</span>
+      <span class="exp-name">Borecaia / Mortes</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/M82o2D0hXvsnNRkP2" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2016</span>
+      <span class="exp-name">Ponte de Pedra / Sangue</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/togx7EcDFhQzoZAQ8" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2015</span>
+      <span class="exp-name">Poty</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/yxqR5dMR9TVwUP3d6" target="_blank">Fotos 1</a>
+        <a class="exp-link" href="https://photos.app.goo.gl/fs1KAXpQHvMyzT86A" target="_blank">Fotos 2</a>
+        <a class="exp-link video" href="https://vimeo.com/130828485" target="_blank">▶ Vídeo</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2015</span>
+      <span class="exp-name">Peixe / Araguaia</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://goo.gl/photos/z7FJrwnPuCch7qSb9" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2014</span>
+      <span class="exp-name">Culuene</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/xWeLgeG8LHFQ4WCA6" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2013</span>
+      <span class="exp-name">São João / Mortes / Araguaia</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/2LrCK5eBKgw5pi1F7" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2012</span>
+      <span class="exp-name">Sono / Soninho</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://goo.gl/photos/wistmKkBZjPVUen86" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2012</span>
+      <span class="exp-name">São Marcos</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/DwHQTTXSjPXovUgu5" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2011</span>
+      <span class="exp-name">Xavantinho</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://goo.gl/photos/EeXbLpGmJN8E6BH46" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2010</span>
+      <span class="exp-name">Riozinho</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/NenxjAC2cfAWijgn7" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2010</span>
+      <span class="exp-name">Jacaré-Pepira</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/qzBr225b5j5mZPQp6" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2009</span>
+      <span class="exp-name">Saco do Mamanguá</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/JgRmRMt6TnrGEkGG9" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2009</span>
+      <span class="exp-name">Rio Piraim</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/pK6S1UVzhmqF3j4D8" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2008</span>
+      <span class="exp-name">São Benedito</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://goo.gl/photos/HiXSYeYApEwK4rWi7" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2008</span>
+      <span class="exp-name">Ariri-Sebuí</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/Vctr5ZGRqvKuKgKZ9" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2007</span>
+      <span class="exp-name">Guaporé</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://goo.gl/photos/b6JsruB59MyX21857" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2006</span>
+      <span class="exp-name">Cristalino</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/tcVBaVaHgmfpk3ND9" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+    <div class="expedition-item">
+      <span class="exp-year">2005</span>
+      <span class="exp-name">Aquidauana</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/2y8y6T2FN9wakmce8" target="_blank">Fotos</a>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>Acervo de Expedições de Canoagem &nbsp;·&nbsp; 2005 – 2026</p>
+  </footer>
+
+</div>
+</body>
+</html>
