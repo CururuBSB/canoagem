@@ -127,9 +127,9 @@
 
   .expedition-item {
     display: grid;
-    grid-template-columns: 100px 1fr auto;
+    grid-template-columns: 70px minmax(140px, 1fr) auto;
     align-items: center;
-    gap: 0 24px;
+    gap: 0 18px;
     padding: 18px 28px;
     border-left: 2px solid transparent;
     transition: all 0.25s ease;
@@ -137,7 +137,7 @@
     animation: fadeUp 0.6s ease forwards;
     border-bottom: 1px solid rgba(245,239,224,0.06);
     background: rgba(255,255,255,0.02);
-  }
+}
 
   .expedition-item:hover {
     border-left-color: var(--dourado);
@@ -159,6 +159,7 @@
     font-weight: 400;
     color: var(--bege);
     letter-spacing: 0.3px;
+    min-width: 0;
   }
 
   .exp-links {
@@ -247,17 +248,60 @@
 
   /* RESPONSIVE */
   @media (max-width: 600px) {
+
+    .container {
+        padding: 0 12px 50px;
+    }
+
     .expedition-item {
-      grid-template-columns: 80px 1fr;
-      grid-template-rows: auto auto;
-      padding: 14px 16px;
+        grid-template-columns: 55px minmax(90px, 1fr) auto;
+        gap: 0 10px;
+        padding: 12px 10px;
     }
+
+    .exp-year {
+        font-size: 0.9rem;
+    }
+
+    .exp-name {
+        font-size: 0.88rem;
+        line-height: 1.25;
+    }
+
     .exp-links {
-      grid-column: 1 / -1;
-      justify-content: flex-start;
-      margin-top: 8px;
+        grid-column: auto;
+        justify-content: flex-end;
+        gap: 4px;
     }
-  }
+
+    .exp-link {
+        font-size: 0.58rem;
+        letter-spacing: 0.8px;
+        padding: 3px 6px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .expedition-item {
+        grid-template-columns: 48px minmax(70px, 1fr) auto;
+        gap: 0 8px;
+        padding: 10px 8px;
+    }
+
+    .exp-year {
+        font-size: 0.82rem;
+    }
+
+    .exp-name {
+        font-size: 0.8rem;
+    }
+
+    .exp-link {
+        font-size: 0.52rem;
+        padding: 2px 5px;
+    }
+}
 </style>
 </head>
 <body>
