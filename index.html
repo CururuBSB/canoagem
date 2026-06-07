@@ -170,6 +170,19 @@
     letter-spacing: 0.3px;
     min-width: 0;
   }
+  
+  .exp-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .exp-distance {
+    font-size: 0.72rem;
+    color: rgba(245,239,224,0.45);
+    margin-top: 3px;
+    letter-spacing: 0.5px;
+  }
 
   .exp-links {
     display: flex;
@@ -277,6 +290,10 @@
         font-size: 0.88rem;
         line-height: 1.25;
     }
+    
+    .exp-distance {
+        font-size: 0.62rem;
+    }
 
     .exp-links {
         grid-column: auto;
@@ -306,6 +323,10 @@
     .exp-name {
         font-size: 0.8rem;
     }
+    
+    .exp-distance {
+        font-size: 0.62rem;
+    }
 
     .exp-link {
         font-size: 0.52rem;
@@ -323,7 +344,14 @@
     <h1>Expedições de<br>Canoagem</h1>
     <div class="header-anos">2005 – 2026</div>
     <p class="header-desc">Fotos, vídeos e memórias de duas décadas de aventuras pelos rios do Brasil.</p>
-    <p class="header-stats">5.250 quilômetros remados</p>
+    <div class="header-stats">
+    <div style="font-size:2.3rem;color:var(--dourado);font-family:'Playfair Display',serif;">
+        5.250
+    </div>
+    <div style="font-size:0.75rem;letter-spacing:3px;text-transform:uppercase;">
+        Quilômetros remados
+    </div>
+    </div>
 	<div class="header-ornament">
       <div class="ornament-line"></div>
       <div class="ornament-icon">🛶</div>
@@ -335,7 +363,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2026</span>
-      <span class="exp-name">Pindaíba</span>
+      <div class="exp-info">
+        <span class="exp-name">Pindaíba</span>
+        <span class="exp-distance">226 km</span>
+    </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/m9v47YQHUEsN6g4j7" target="_blank">Fotos</a>
       </div>
@@ -343,7 +374,10 @@
     
      <div class="expedition-item">
       <span class="exp-year">2025</span>
-      <span class="exp-name">Paranã</span>
+      <div class="exp-info">
+        <span class="exp-name">Paranã</span>
+        <span class="exp-distance">170 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/DyRYqkpv8MAnPJQ5A" target="_blank">Fotos</a>
       </div>
@@ -351,7 +385,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2025</span>
-      <span class="exp-name">Garças</span>
+      <div class="exp-info">
+        <span class="exp-name">Garças</span>
+        <span class="exp-distance">177 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/UR3LvD22ki93mKbQ8" target="_blank">Fotos</a>
       </div>
@@ -359,7 +396,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2024</span>
-      <span class="exp-name">Mortes</span>
+      <div class="exp-info">
+        <span class="exp-name">Mortes</span>
+        <span class="exp-distance">286 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/uyjTkDUnoEy2aUme9" target="_blank">Fotos</a>
       </div>
@@ -367,7 +407,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2023</span>
-      <span class="exp-name">Cristalino</span>
+      <div class="exp-info">
+        <span class="exp-name">Cristalino</span>
+        <span class="exp-distance">225 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/HfRaPcPBHWZJnwCd9" target="_blank">Fotos</a>
       </div>
@@ -375,7 +418,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2022</span>
-      <span class="exp-name">Ribeira de Iguape</span>
+      <div class="exp-info">
+        <span class="exp-name">Ribeira de Iguape</span>
+        <span class="exp-distance">136 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/zvNReesDEYcqHHKM9" target="_blank">Fotos</a>
       </div>
@@ -383,7 +429,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2022</span>
-      <span class="exp-name">Itaguari</span>
+      <div class="exp-info">
+        <span class="exp-name">Itaguari</span>
+        <span class="exp-distance">136 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/89jy46BPt4EvnwqKA" target="_blank">Fotos 1</a>
         <a class="exp-link" href="https://photos.app.goo.gl/bTAGxEXSX6N8avP66" target="_blank">Fotos 2</a>
@@ -392,7 +441,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2021</span>
-      <span class="exp-name">Araguaia</span>
+      <div class="exp-info">
+        <span class="exp-name">Araguaia</span>
+        <span class="exp-distance">204 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/kb1BboUAmhTsWbC87" target="_blank">Fotos</a>
       </div>
@@ -400,7 +452,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2020</span>
-      <span class="exp-name">Paracatu</span>
+      <div class="exp-info">
+        <span class="exp-name">Paracatu</span>
+        <span class="exp-distance">213 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/4knHjHYUZtkJJ9MV6" target="_blank">Fotos 1</a>
         <a class="exp-link" href="https://photos.app.goo.gl/vZLcXkLYufs4cEvV6" target="_blank">Fotos 2</a>
@@ -409,7 +464,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2019</span>
-      <span class="exp-name">Von den Steinen</span>
+      <div class="exp-info">
+        <span class="exp-name">Von den Steinen</span>
+        <span class="exp-distance">228 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/S7rGKEp4Vqud6LMJ7" target="_blank">Fotos</a>
       </div>
@@ -417,7 +475,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2018</span>
-      <span class="exp-name">Mortes</span>
+      <div class="exp-info">
+        <span class="exp-name">Mortes</span>
+        <span class="exp-distance">275 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/ms8rifiNUSxWVVWm7" target="_blank">Fotos</a>
       </div>
@@ -425,7 +486,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2018</span>
-      <span class="exp-name">Darro</span>
+      <div class="exp-info">
+        <span class="exp-name">Darro</span>
+        <span class="exp-distance">275 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/ZwB79SADoG4itPw28" target="_blank">Fotos 1</a>
         <a class="exp-link" href="https://photos.app.goo.gl/5dcUvqsG5TUX3bADA" target="_blank">Fotos 2</a>
@@ -434,7 +498,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2017</span>
-      <span class="exp-name">Borecaia / Mortes</span>
+      <div class="exp-info">
+        <span class="exp-name">Borecaia / Mortes</span>
+        <span class="exp-distance">429 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/M82o2D0hXvsnNRkP2" target="_blank">Fotos</a>
       </div>
@@ -442,7 +509,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2016</span>
-      <span class="exp-name">Ponte de Pedra / Sangue</span>
+      <div class="exp-info">
+        <span class="exp-name">Ponte de Pedra / Sangue</span>
+        <span class="exp-distance">267 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/togx7EcDFhQzoZAQ8" target="_blank">Fotos</a>
       </div>
@@ -450,7 +520,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2015</span>
-      <span class="exp-name">Poty</span>
+      <div class="exp-info">
+        <span class="exp-name">Poty</span>
+        <span class="exp-distance">108 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/yxqR5dMR9TVwUP3d6" target="_blank">Fotos 1</a>
         <a class="exp-link" href="https://photos.app.goo.gl/fs1KAXpQHvMyzT86A" target="_blank">Fotos 2</a>
@@ -460,7 +533,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2015</span>
-      <span class="exp-name">Peixe / Araguaia</span>
+      <div class="exp-info">
+        <span class="exp-name">Peixe / Araguaia</span>
+        <span class="exp-distance"></span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://goo.gl/photos/z7FJrwnPuCch7qSb9" target="_blank">Fotos</a>
       </div>
@@ -468,7 +544,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2014</span>
-      <span class="exp-name">Culuene</span>
+      <div class="exp-info">
+        <span class="exp-name">Culuene</span>
+        <span class="exp-distance">297 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/xWeLgeG8LHFQ4WCA6" target="_blank">Fotos</a>
       </div>
@@ -476,7 +555,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2013</span>
-      <span class="exp-name">São João / Mortes / Araguaia</span>
+      <div class="exp-info">
+        <span class="exp-name">São João / Mortes / Araguaia</span>
+        <span class="exp-distance">267 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/2LrCK5eBKgw5pi1F7" target="_blank">Fotos</a>
       </div>
@@ -484,7 +566,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2012</span>
-      <span class="exp-name">Sono / Soninho</span>
+      <div class="exp-info">
+        <span class="exp-name">Sono / Soninho</span>
+        <span class="exp-distance">144 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://goo.gl/photos/wistmKkBZjPVUen86" target="_blank">Fotos</a>
       </div>
@@ -492,7 +577,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2012</span>
-      <span class="exp-name">São Marcos</span>
+      <div class="exp-info">
+        <span class="exp-name">São Marcos</span>
+        <span class="exp-distance">90 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/DwHQTTXSjPXovUgu5" target="_blank">Fotos</a>
       </div>
@@ -500,7 +588,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2011</span>
-      <span class="exp-name">Xavantinho</span>
+      <div class="exp-info">
+        <span class="exp-name">Xavantinho</span>
+        <span class="exp-distance">189 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://goo.gl/photos/EeXbLpGmJN8E6BH46" target="_blank">Fotos</a>
       </div>
@@ -508,7 +599,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2010</span>
-      <span class="exp-name">Riozinho</span>
+      <div class="exp-info">
+        <span class="exp-name">Riozinho</span>
+        <span class="exp-distance"></span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/NenxjAC2cfAWijgn7" target="_blank">Fotos</a>
       </div>
@@ -516,7 +610,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2010</span>
-      <span class="exp-name">Jacaré-Pepira</span>
+      <div class="exp-info">
+        <span class="exp-name">Jacaré-Pepira</span>
+        <span class="exp-distance">100 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/qzBr225b5j5mZPQp6" target="_blank">Fotos</a>
       </div>
@@ -524,7 +621,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2009</span>
-      <span class="exp-name">Saco do Mamanguá</span>
+      <div class="exp-info">
+        <span class="exp-name">Saco do Mamanguá</span>
+        <span class="exp-distance"></span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/JgRmRMt6TnrGEkGG9" target="_blank">Fotos</a>
       </div>
@@ -532,7 +632,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2009</span>
-      <span class="exp-name">Rio Piraim</span>
+      <div class="exp-info">
+        <span class="exp-name">Rio Piraim</span>
+        <span class="exp-distance">148 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/pK6S1UVzhmqF3j4D8" target="_blank">Fotos</a>
       </div>
@@ -540,7 +643,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2008</span>
-      <span class="exp-name">São Benedito</span>
+      <div class="exp-info">
+        <span class="exp-name">Azul / São Benedito</span>
+        <span class="exp-distance">141 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://goo.gl/photos/HiXSYeYApEwK4rWi7" target="_blank">Fotos</a>
       </div>
@@ -548,7 +654,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2008</span>
-      <span class="exp-name">Ariri-Sebuí</span>
+      <div class="exp-info">
+        <span class="exp-name">Ariri-Sebuí</span>
+        <span class="exp-distance"></span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/Vctr5ZGRqvKuKgKZ9" target="_blank">Fotos</a>
       </div>
@@ -556,7 +665,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2007</span>
-      <span class="exp-name">Guaporé</span>
+      <div class="exp-info">
+        <span class="exp-name">Guaporé</span>
+        <span class="exp-distance">200 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://goo.gl/photos/b6JsruB59MyX21857" target="_blank">Fotos</a>
       </div>
@@ -564,7 +676,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2006</span>
-      <span class="exp-name">Cristalino</span>
+      <div class="exp-info">
+        <span class="exp-name">Cristalino</span>
+        <span class="exp-distance">225 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/tcVBaVaHgmfpk3ND9" target="_blank">Fotos</a>
       </div>
@@ -572,7 +687,10 @@
 
     <div class="expedition-item">
       <span class="exp-year">2005</span>
-      <span class="exp-name">Aquidauana</span>
+      <div class="exp-info">
+        <span class="exp-name">Aquidauana</span>
+        <span class="exp-distance">303 km</span>
+      </div>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/2y8y6T2FN9wakmce8" target="_blank">Fotos</a>
       </div>
