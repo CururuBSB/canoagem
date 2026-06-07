@@ -104,13 +104,22 @@
     opacity: 0;
     animation: fadeUp 0.9s ease forwards 0.6s;
   }
+  
+  .header-stats {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.8);
+    margin-top: 16px;
+    line-height: 1.7;
+    opacity: 0;
+    animation: fadeUp 0.9s ease forwards 0.6s;
+  }
 
   .header-ornament {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 16px;
-    margin-top: 36px;
+    margin-top: 26px;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.7s;
   }
@@ -229,6 +238,7 @@
   .expedition-item:nth-child(27) { animation-delay: 1.14s }
   .expedition-item:nth-child(28) { animation-delay: 1.18s }
   .expedition-item:nth-child(29) { animation-delay: 1.22s }
+  .expedition-item:nth-child(30) { animation-delay: 1.26s }
 
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(14px); }
@@ -313,7 +323,8 @@
     <h1>Expedições de<br>Canoagem</h1>
     <div class="header-anos">2005 – 2026</div>
     <p class="header-desc">Fotos, vídeos e memórias de duas décadas de aventuras pelos rios do Brasil.</p>
-    <div class="header-ornament">
+    <p class="header-stats">5.250 quilômetros remados</p>
+	<div class="header-ornament">
       <div class="ornament-line"></div>
       <div class="ornament-icon">🛶</div>
       <div class="ornament-line right"></div>
@@ -329,10 +340,18 @@
         <a class="exp-link" href="https://photos.app.goo.gl/m9v47YQHUEsN6g4j7" target="_blank">Fotos</a>
       </div>
     </div>
+    
+     <div class="expedition-item">
+      <span class="exp-year">2025</span>
+      <span class="exp-name">Paranã</span>
+      <div class="exp-links">
+        <a class="exp-link" href="https://photos.app.goo.gl/DyRYqkpv8MAnPJQ5A" target="_blank">Fotos</a>
+      </div>
+    </div>
 
     <div class="expedition-item">
       <span class="exp-year">2025</span>
-      <span class="exp-name">Rio Garças</span>
+      <span class="exp-name">Garças</span>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/UR3LvD22ki93mKbQ8" target="_blank">Fotos</a>
       </div>
@@ -340,7 +359,7 @@
 
     <div class="expedition-item">
       <span class="exp-year">2024</span>
-      <span class="exp-name">Rio das Mortes</span>
+      <span class="exp-name">Mortes</span>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/uyjTkDUnoEy2aUme9" target="_blank">Fotos</a>
       </div>
@@ -348,7 +367,7 @@
 
     <div class="expedition-item">
       <span class="exp-year">2023</span>
-      <span class="exp-name">Rio Cristalino</span>
+      <span class="exp-name">Cristalino</span>
       <div class="exp-links">
         <a class="exp-link" href="https://photos.app.goo.gl/HfRaPcPBHWZJnwCd9" target="_blank">Fotos</a>
       </div>
