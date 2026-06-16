@@ -39,7 +39,10 @@ const elements = {
   lineList: document.getElementById("lineList"),
   selectionCount: document.getElementById("selectionCount"),
   generatePlacemarksButton: document.getElementById("generatePlacemarksButton"),
-  reverseFirstButton: document.getElementById("reverseFirstButton"),
+  reverseFirstToggle: document.getElementById("reverseFirstToggle"),
+  reverseOption: document.getElementById("reverseOption"),
+  reverseStateText: document.getElementById("reverseStateText"),
+  reverseTargetText: document.getElementById("reverseTargetText"),
   concatenateButton: document.getElementById("concatenateButton"),
   exportButton: document.getElementById("exportButton")
 };
@@ -77,26 +80,23 @@ function init() {
     lineWidthText = event.target.value;
   });
 
+  elements.reverseFirstToggle.addEventListener("change", event => {
+    reversedFirst = event.target.checked;
+    updateActionStates();
+  });
+
   elements.generatePlacemarksButton.addEventListener("click", () => {
     const firstID = selectedLines.values().next().value;
     const first = lineStrings.find(line => line.id === firstID);
     if (first) {
-      generatePlacemarks(first);
-    }
-  });
-
-  elements.reverseFirstButton.addEventListener("click", () => {
-    const firstID = selectedLines.values().next().value;
-    const index = lineStrings.findIndex(line => line.id === firstID);
-    if (index >= 0) {
-      lineStrings[index].coordinates.reverse();
-      reversedFirst = !reversedFirst;
-      renderLineList();
+      generatePlacemarks(preparedLineForAction(first));
     }
   });
 
   elements.concatenateButton.addEventListener("click", () => {
-    concatenateTrails();
+    runWithPreparedFirstSelectedLine(() => {
+      concatenateTrails();
+    });
   });
 
   elements.exportButton.addEventListener("click", () => {
@@ -180,10 +180,18 @@ function renderLineList() {
 
 function updateActionStates() {
   const selectedCount = selectedLines.size;
-  elements.generatePlacemarksButton.disabled = selectedCount === 0;
-  elements.reverseFirstButton.disabled = selectedCount === 0;
+  const firstSelectedLine = firstSelectedLineForAction();
+
+  elements.generatePlacemarksButton.disabled = selectedCount !== 1;
+  elements.reverseFirstToggle.disabled = selectedCount === 0;
   elements.concatenateButton.disabled = selectedCount < 2;
   elements.exportButton.disabled = selectedCount === 0;
+
+  elements.reverseOption.classList.toggle("active", reversedFirst && selectedCount > 0);
+  elements.reverseStateText.textContent = reversedFirst && selectedCount > 0 ? "SIM" : "NÃO";
+  elements.reverseTargetText.textContent = firstSelectedLine
+    ? `Alvo: ${firstSelectedLine.name}`
+    : "Nenhuma trilha selecionada";
 }
 
 function loadKML(file) {
@@ -271,6 +279,34 @@ function moveLineDown(line) {
     [lineStrings[i], lineStrings[i + 1]] = [lineStrings[i + 1], lineStrings[i]];
     renderLineList();
   }
+}
+
+function firstSelectedLineForAction() {
+  const firstID = selectedLines.values().next().value;
+  return lineStrings.find(line => line.id === firstID);
+}
+
+function preparedLineForAction(line) {
+  if (!reversedFirst) {
+    return line;
+  }
+
+  return makeLineString(line.name, line.coordinates.slice().reverse());
+}
+
+function runWithPreparedFirstSelectedLine(action) {
+  const firstID = selectedLines.values().next().value;
+  const index = lineStrings.findIndex(line => line.id === firstID);
+
+  if (!reversedFirst || index < 0) {
+    action();
+    return;
+  }
+
+  lineStrings[index].coordinates.reverse();
+  action();
+  lineStrings[index].coordinates.reverse();
+  renderLineList();
 }
 
 function concatenateTrails() {
