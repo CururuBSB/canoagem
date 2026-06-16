@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KML Trail Tools</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="toolbar" aria-label="Ferramentas KML">
+      <div class="top-row">
+        <label class="file-button">
+          Abrir KML
+          <input id="fileInput" type="file" accept=".kml,.xml,application/vnd.google-earth.kml+xml,text/xml,application/xml">
+        </label>
+        <p id="statusText" class="status" role="status">Nenhum arquivo carregado.</p>
+      </div>
+
+      <div class="controls-grid">
+        <fieldset>
+          <legend>Intervalo (km)</legend>
+          <div id="intervalChips" class="chips" aria-label="Intervalo em quilômetros"></div>
+        </fieldset>
+
+        <label class="compact-field">
+          <span>Prefixo:</span>
+          <input id="placemarkPrefix" type="text" placeholder="KM">
+        </label>
+
+        <label class="compact-field">
+          <span>Cor:</span>
+          <select id="trailColor"></select>
+        </label>
+
+        <label class="compact-field">
+          <span>Largura:</span>
+          <input id="lineWidth" type="number" min="0.1" step="0.1" value="2">
+        </label>
+      </div>
+    </section>
+
+    <section class="list-panel" aria-label="Trilhas carregadas">
+      <div class="list-header">
+        <h1>Trilhas</h1>
+        <span id="selectionCount">0 selecionadas</span>
+      </div>
+      <div id="lineList" class="line-list"></div>
+    </section>
+
+    <section class="actions" aria-label="Ações">
+      <button id="generatePlacemarksButton" type="button">Gerar Placemarks</button>
+      <button id="reverseFirstButton" type="button">Inverter Primeira Trilha</button>
+      <button id="concatenateButton" type="button">Concatenar Trilhas</button>
+      <button id="exportButton" type="button">Exportar para KML</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
