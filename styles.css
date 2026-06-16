@@ -252,84 +252,29 @@ legend {
 
 .actions {
   margin-top: 16px;
-  flex-wrap: wrap;
-}
-
-.reverse-option {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 44px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: var(--surface);
-  padding: 7px 10px;
-  cursor: pointer;
-}
-
-.reverse-option.active {
-  border-color: var(--accent);
-  background: #eef5ff;
-}
-
-.reverse-option input {
-  width: 18px;
-  height: 18px;
-  min-height: 18px;
-  accent-color: var(--accent);
-}
-
-.reverse-copy {
   display: grid;
-  gap: 2px;
+  gap: 10px;
 }
 
-.reverse-copy span {
-  font-size: 14px;
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.action-button {
+  min-width: 170px;
+  background: var(--surface);
   font-weight: 600;
 }
 
-.reverse-copy small {
-  max-width: 260px;
-  color: var(--muted);
-  font-size: 12px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.reverse-state {
-  min-width: 44px;
-  border-radius: 999px;
-  background: var(--chip-bg);
-  color: var(--muted);
-  padding: 4px 8px;
-  text-align: center;
-  font-size: 12px;
-}
-
-.reverse-option.active .reverse-state {
-  background: var(--accent);
-  color: #ffffff;
-}
-
-.reverse-option:has(input:disabled) {
-  cursor: not-allowed;
-  opacity: 0.55;
-}
-
-.actions button {
-  background: var(--surface);
-}
-
-.actions button:last-child {
+.primary-action {
   background: var(--accent);
   border-color: var(--accent);
   color: #ffffff;
-  font-weight: 600;
 }
 
-.actions button:last-child:hover {
+.primary-action:hover {
   background: var(--accent-strong);
 }
 
@@ -345,8 +290,7 @@ legend {
   .compact-field,
   .compact-field input,
   .compact-field select,
-  .reverse-option,
-  .actions button {
+  .action-button {
     width: 100%;
   }
 

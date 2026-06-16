@@ -49,17 +49,14 @@
     </section>
 
     <section class="actions" aria-label="Ações">
-      <label class="reverse-option" id="reverseOption">
-        <input id="reverseFirstToggle" type="checkbox">
-        <span class="reverse-copy">
-          <span>Inverter antes de executar</span>
-          <small id="reverseTargetText">Nenhuma trilha selecionada</small>
-        </span>
-        <strong id="reverseStateText" class="reverse-state">NÃO</strong>
-      </label>
-      <button id="generatePlacemarksButton" type="button">Gerar Placemarks</button>
-      <button id="concatenateButton" type="button">Concatenar Trilhas</button>
-      <button id="exportButton" type="button">Exportar para KML</button>
+      <div class="action-row">
+        <button id="reverseLineButton" class="action-button" type="button">Inverter Trilha</button>
+        <button id="concatenateButton" class="action-button" type="button">Concatenar Trilhas</button>
+        <button id="exportButton" class="action-button" type="button">Exportar para KML</button>
+      </div>
+      <div class="action-row action-row-primary">
+        <button id="generatePlacemarksButton" class="action-button primary-action" type="button">Gerar Placemarks</button>
+      </div>
     </section>
   </main>
 

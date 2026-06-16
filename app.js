@@ -22,12 +22,10 @@ const kmPresets = [1, 2, 5, 10, 15, 20];
 
 let lineStrings = [];
 let selectedLines = new Set();
-let reversedFirst = false;
 let selectedIntervalKm = 1;
 let placemarkPrefix = "";
 let selectedTrailColor = "blue";
 let lineWidthText = "2";
-let concatenatedCounter = 1;
 
 const elements = {
   fileInput: document.getElementById("fileInput"),
@@ -39,10 +37,7 @@ const elements = {
   lineList: document.getElementById("lineList"),
   selectionCount: document.getElementById("selectionCount"),
   generatePlacemarksButton: document.getElementById("generatePlacemarksButton"),
-  reverseFirstToggle: document.getElementById("reverseFirstToggle"),
-  reverseOption: document.getElementById("reverseOption"),
-  reverseStateText: document.getElementById("reverseStateText"),
-  reverseTargetText: document.getElementById("reverseTargetText"),
+  reverseLineButton: document.getElementById("reverseLineButton"),
   concatenateButton: document.getElementById("concatenateButton"),
   exportButton: document.getElementById("exportButton")
 };
@@ -80,23 +75,20 @@ function init() {
     lineWidthText = event.target.value;
   });
 
-  elements.reverseFirstToggle.addEventListener("change", event => {
-    reversedFirst = event.target.checked;
-    updateActionStates();
-  });
-
   elements.generatePlacemarksButton.addEventListener("click", () => {
     const firstID = selectedLines.values().next().value;
     const first = lineStrings.find(line => line.id === firstID);
     if (first) {
-      generatePlacemarks(preparedLineForAction(first));
+      generatePlacemarks(first);
     }
   });
 
+  elements.reverseLineButton.addEventListener("click", () => {
+    reverseSelectedLine();
+  });
+
   elements.concatenateButton.addEventListener("click", () => {
-    runWithPreparedFirstSelectedLine(() => {
-      concatenateTrails();
-    });
+    concatenateTrails();
   });
 
   elements.exportButton.addEventListener("click", () => {
@@ -180,18 +172,11 @@ function renderLineList() {
 
 function updateActionStates() {
   const selectedCount = selectedLines.size;
-  const firstSelectedLine = firstSelectedLineForAction();
 
   elements.generatePlacemarksButton.disabled = selectedCount !== 1;
-  elements.reverseFirstToggle.disabled = selectedCount === 0;
+  elements.reverseLineButton.disabled = selectedCount !== 1;
   elements.concatenateButton.disabled = selectedCount < 2;
-  elements.exportButton.disabled = selectedCount === 0;
-
-  elements.reverseOption.classList.toggle("active", reversedFirst && selectedCount > 0);
-  elements.reverseStateText.textContent = reversedFirst && selectedCount > 0 ? "SIM" : "NÃO";
-  elements.reverseTargetText.textContent = firstSelectedLine
-    ? `Alvo: ${firstSelectedLine.name}`
-    : "Nenhuma trilha selecionada";
+  elements.exportButton.disabled = selectedCount !== 1;
 }
 
 function loadKML(file) {
@@ -286,26 +271,17 @@ function firstSelectedLineForAction() {
   return lineStrings.find(line => line.id === firstID);
 }
 
-function preparedLineForAction(line) {
-  if (!reversedFirst) {
-    return line;
-  }
+function reverseSelectedLine() {
+  const line = firstSelectedLineForAction();
+  if (!line || selectedLines.size !== 1) return;
 
-  return makeLineString(line.name, line.coordinates.slice().reverse());
-}
+  const newName = uniqueTrailName(`${line.name} (invertida)`);
+  const reversedCoordinates = line.coordinates.slice().reverse();
 
-function runWithPreparedFirstSelectedLine(action) {
-  const firstID = selectedLines.values().next().value;
-  const index = lineStrings.findIndex(line => line.id === firstID);
+  lineStrings.push(
+    makeLineString(newName, reversedCoordinates)
+  );
 
-  if (!reversedFirst || index < 0) {
-    action();
-    return;
-  }
-
-  lineStrings[index].coordinates.reverse();
-  action();
-  lineStrings[index].coordinates.reverse();
   renderLineList();
 }
 
@@ -333,7 +309,6 @@ function concatenateTrails() {
     makeLineString(newName, concatenated)
   );
 
-  concatenatedCounter += 1;
   renderLineList();
 }
 
@@ -419,6 +394,10 @@ function exportToKML() {
 }
 
 function uniqueConcatenatedName(base = "Trilha Concatenada") {
+  return uniqueTrailName(base);
+}
+
+function uniqueTrailName(base) {
   const existingNames = new Set(lineStrings.map(line => line.name));
 
   if (!existingNames.has(base)) {
@@ -528,8 +507,7 @@ window.__kmlTrailTools = {
       placemarkPrefix,
       selectedTrailColor,
       lineWidthText,
-      concatenatedCounter,
-      reversedFirst
+      lineWidthText
     };
   }
 };
