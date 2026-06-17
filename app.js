@@ -43,6 +43,10 @@ const elements = {
   exportButton: document.getElementById("exportButton")
 };
 
+elements.openFileButton.addEventListener('click', () => {
+    fileInput.click();
+});
+
 function makeLineString(name, coordinates) {
   return {
     id: name,
@@ -95,11 +99,6 @@ function init() {
   elements.exportButton.addEventListener("click", () => {
     exportToKML();
   });
-
-  elements.openFileButton.addEventListener('click', () => {
-    fileInput.click();
-  });
-
 }
 
 function renderIntervalChips() {
