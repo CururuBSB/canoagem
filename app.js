@@ -44,7 +44,7 @@ const elements = {
 };
 
 elements.openFileButton.addEventListener('click', () => {
-    fileInput.click();
+    fileInput?.click();
 });
 
 function makeLineString(name, coordinates) {
