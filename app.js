@@ -29,6 +29,7 @@ let lineWidthText = "2";
 
 const elements = {
   fileInput: document.getElementById("fileInput"),
+  openFileButton:  document.getElementById('openFileButton'),
   statusText: document.getElementById("statusText"),
   intervalChips: document.getElementById("intervalChips"),
   placemarkPrefix: document.getElementById("placemarkPrefix"),
@@ -94,6 +95,11 @@ function init() {
   elements.exportButton.addEventListener("click", () => {
     exportToKML();
   });
+
+  elements.openFileButton.addEventListener('click', () => {
+    fileInput.click();
+  });
+
 }
 
 function renderIntervalChips() {
