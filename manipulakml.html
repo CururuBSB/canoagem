@@ -13,10 +13,8 @@
   <main class="app-shell">
     <section class="toolbar" aria-label="Ferramentas KML">
       <div class="top-row">
-        <label class="file-button">
-          Abrir KML
-          <input id="fileInput" type="file" accept=".kml,.xml,application/vnd.google-earth.kml+xml,text/xml,application/xml">
-        </label>
+        <button id="openFileButton" class="action-button primary-action" type="button">Abrir KML</button>
+        <input id="fileInput" type="file" accept=".kml,.xml,application/vnd.google-earth.kml+xml,text/xml,application/xml" hidden>
         <p id="statusText" class="status" role="status">Nenhum arquivo carregado.</p>
       </div>
 
