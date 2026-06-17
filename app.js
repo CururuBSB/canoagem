@@ -43,10 +43,6 @@ const elements = {
   exportButton: document.getElementById("exportButton")
 };
 
-elements.openFileButton.addEventListener('click', () => {
-    fileInput?.click();
-});
-
 function makeLineString(name, coordinates) {
   return {
     id: name,
@@ -61,6 +57,10 @@ function init() {
   renderLineList();
   updateActionStates();
 
+  elements.openFileButton.addEventListener('click', () => {
+    fileInput?.click();
+  });
+  
   elements.fileInput.addEventListener("change", event => {
     const file = event.target.files[0];
     if (file) {
