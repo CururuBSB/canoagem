@@ -114,27 +114,6 @@ select:focus {
   flex-wrap: wrap;
 }
 
-.file-button,
-.primary-action {
-  background: var(--dourado);
-  border-color: var(--dourado);
-  color: var(--verde-escuro);
-  font-weight: 700;
-}
-
-.file-button:hover,
-.primary-action:hover {
-  background: #d9b95b;
-}
-
-.file-button input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
-  pointer-events: none;
-}
-
 .status {
   margin: 0;
   color: var(--muted);
