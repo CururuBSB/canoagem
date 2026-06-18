@@ -58,7 +58,7 @@ function init() {
   updateActionStates();
 
   elements.openFileButton.addEventListener('click', () => {
-    fileInput?.click();
+    elements.fileInput?.click();
   });
   
   elements.fileInput.addEventListener("change", event => {
@@ -519,8 +519,9 @@ async function sendTrailInfo(line) {
                 body: JSON.stringify(payload)             
             }
         );
+    } catch (error) {
+        console.error("Erro ao enviar:", error);
     }
-}
 
 window.__kmlTrailTools = {
   parseKML,
@@ -542,7 +543,6 @@ window.__kmlTrailTools = {
       selectedIntervalKm,
       placemarkPrefix,
       selectedTrailColor,
-      lineWidthText,
       lineWidthText
     };
   }
