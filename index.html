@@ -260,7 +260,22 @@
     line-height: 1.7;
     margin-top: 60px;
   }
+  
+  .utilitario-titulo {
+    margin: 0 0 8px 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--bege);
+  }
 
+  .utilitario-texto {
+    margin: 0 0 10px 0;
+    font-size: 1 rem;
+    line-height: 1.5;
+    color: rgba(245,239,224,0.85);
+  }
+  
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(14px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -343,7 +358,7 @@
 }
 
 a {
-    color: #f4d35e;
+    color: #c8a84b;
 }
 
 a:hover {
@@ -351,7 +366,7 @@ a:hover {
 }
 
 a:visited {
-    color: #c9a227;
+    color: #c8a84b;
 }
 </style>
 </head>
@@ -733,9 +748,13 @@ a:visited {
   </div>
   
   <div class="utilitario">
-    Você também é um remador?
-    Utilize nosso <a href="manipulakml.html" target="_blank">gerador de pontos</a>
-    para ajudar na organização da trilha de sua expedição!
+    <p class="utilitario-titulo">Você também é um expedicionário?</p>
+
+    <p class="utilitario-texto">
+        Planeje sua expedição no Google Earth e gere pontos de referência para acompanhar o percurso no GPS ou celular.
+    </p>
+
+    <a href="manipulakml.html" target="_blank">Conheça a ferramenta</a>
   </div>
 
   <footer>
