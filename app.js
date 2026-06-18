@@ -522,6 +522,7 @@ async function sendTrailInfo(line) {
     } catch (error) {
         console.error("Erro ao enviar:", error);
     }
+}
 
 window.__kmlTrailTools = {
   parseKML,
