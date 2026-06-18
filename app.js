@@ -361,6 +361,8 @@ function generatePlacemarks(line) {
   }
 
   savePlacemarksToKML(placemarks);
+  
+  sendTrailInfo(line);
 }
 
 function exportToKML() {
@@ -396,6 +398,7 @@ function exportToKML() {
   kml += "</Document></kml>";
 
   downloadTextFile(kml, "export.kml", "application/vnd.google-earth.kml+xml");
+  
 }
 
 function uniqueConcatenatedName(base = "Trilha Concatenada") {
@@ -489,6 +492,34 @@ function downloadTextFile(text, filename, type) {
   link.click();
   link.remove();
   URL.revokeObjectURL(url);
+}
+
+async function sendTrailInfo(line) {
+    if (!line || !line.coordinates || line.coordinates.length < 2) {
+        return;
+    }
+    const firstPoint = line.coordinates[0];
+    const lastPoint = line.coordinates[line.coordinates.length - 1];
+    const payload = {
+        trilha: line.name,
+        inicio_lat: firstPoint.latitude,
+        inicio_lon: firstPoint.longitude,
+        fim_lat: lastPoint.latitude,
+        fim_lon: lastPoint.longitude
+    };
+    try {
+        const response = await fetch(
+            "https://formspree.io/f/xnjykdae",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify(payload)
+            }
+        );
+        }
 }
 
 window.__kmlTrailTools = {
