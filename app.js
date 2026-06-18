@@ -40,7 +40,8 @@ const elements = {
   generatePlacemarksButton: document.getElementById("generatePlacemarksButton"),
   reverseLineButton: document.getElementById("reverseLineButton"),
   concatenateButton: document.getElementById("concatenateButton"),
-  exportButton: document.getElementById("exportButton")
+  exportButton: document.getElementById("exportButton"),
+  viewMapButton: document.getElementById("viewMapButton")
 };
 
 function makeLineString(name, coordinates) {
@@ -56,6 +57,8 @@ function init() {
   renderColorPicker();
   renderLineList();
   updateActionStates();
+
+  elements.viewMapButton.addEventListener("click", openMapPreview);
 
   elements.openFileButton.addEventListener('click', () => {
     elements.fileInput?.click();
@@ -182,6 +185,7 @@ function updateActionStates() {
   elements.reverseLineButton.disabled = selectedCount !== 1;
   elements.concatenateButton.disabled = selectedCount < 2;
   elements.exportButton.disabled = selectedCount !== 1;
+  elements.viewMapButton.disabled = selectedCount !== 1;
 }
 
 function loadKML(file) {
@@ -522,6 +526,31 @@ async function sendTrailInfo(line) {
     } catch (error) {
         console.error("Erro ao enviar:", error);
     }
+}
+
+function openMapPreview() {
+
+    const selectedId =
+        Array.from(selectedLines)[0];
+
+    const line =
+        lineStrings.find(
+            l => l.id === selectedId
+        );
+
+    if (!line) {
+        return;
+    }
+
+    sessionStorage.setItem(
+        "previewTrack",
+        JSON.stringify(line)
+    );
+
+    window.open(
+        "mapa.html",
+        "_blank"
+    );
 }
 
 window.__kmlTrailTools = {
