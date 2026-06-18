@@ -516,9 +516,10 @@ async function sendTrailInfo(line) {
                     "Content-Type": "application/json",
                     "Accept": "application/json"
                 },
-                body: JSON.stringify(payload)
+                body: JSON.stringify(payload)             
             }
-        }
+        );
+    }
 }
 
 window.__kmlTrailTools = {
