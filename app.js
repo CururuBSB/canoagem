@@ -529,24 +529,19 @@ async function sendTrailInfo(line) {
 }
 
 function openMapPreview() {
-
     const selectedId =
         Array.from(selectedLines)[0];
-
     const line =
         lineStrings.find(
             l => l.id === selectedId
         );
-
     if (!line) {
         return;
     }
-
     sessionStorage.setItem(
         "previewTrack",
         JSON.stringify(line)
     );
-
     window.open(
         "mapa.html",
         "_blank"
