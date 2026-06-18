@@ -518,7 +518,6 @@ async function sendTrailInfo(line) {
                 },
                 body: JSON.stringify(payload)
             }
-        );
         }
 }
 
