@@ -35,6 +35,24 @@ const line =
 const map =
     L.map("map");
 
+const greenIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+const redIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-red.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
 L.tileLayer(
     "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
     {
@@ -66,16 +84,25 @@ const last =
     ];
 
 L.marker(
-    [first.latitude, first.longitude]
+    [first.latitude, first.longitude], { icon: greenIcon }
 )
 .addTo(map)
-.bindPopup("Início");
+.bindPopup(`
+<b>Início</b><br>
+${line.name}<br>
+${first.latitude.toFixed(6)},
+${first.longitude.toFixed(6)}
+`);
 
 L.marker(
-    [last.latitude, last.longitude]
+    [last.latitude, last.longitude], { icon: redIcon }
 )
 .addTo(map)
-.bindPopup("Fim");
+.bindPopup(`
+<b>Fim</b><br>
+${last.latitude.toFixed(6)},
+${last.longitude.toFixed(6)}
+`);
 
 map.fitBounds(
     polyline.getBounds()
