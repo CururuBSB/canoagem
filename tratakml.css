@@ -132,6 +132,7 @@ select:focus {
 .top-row {
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 12px;
 }
 
 .status {
@@ -177,7 +178,7 @@ legend {
 }
 
 .compact-field {
-  display: grid;
+  display: inline-block;
   gap: 6px;
   color: var(--muted);
   font-size: 13px;
@@ -188,6 +189,7 @@ legend {
   min-width: 104px;
   color: var(--text);
   font-size: 14px;
+  margin: 0 12px 0 12px;
 }
 
 .compact-field input#placemarkPrefix {
