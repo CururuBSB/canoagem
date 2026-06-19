@@ -1,4 +1,4 @@
-:root {
+    :root {
   --verde-escuro: #1a3a2a;
   --verde-medio: #2d5a3d;
   --verde-agua: #4a8c6a;
@@ -313,6 +313,30 @@ legend {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--dourado);
+}
+
+.radio-group {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.radio-block {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.radio-title {
+    color: var(--dourado);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    min-width: 90px;
 }
 
 @media (max-width: 640px) {
