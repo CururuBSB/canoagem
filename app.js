@@ -369,40 +369,104 @@ function generatePlacemarks(line) {
   sendTrailInfo(line);
 }
 
-function exportToKML() {
-  const width = Number(lineWidthText);
-  if (!Number.isFinite(width)) return;
+function buildTracksKML(lines, width, color) {
 
-  let kml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-  kml += "<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n";
-  kml += "<Document>\n";
+    const doc = document.implementation.createDocument(
+        "http://www.opengis.net/kml/2.2",
+        "kml",
+        null
+    );
 
-  kml += `
-<Style id="exportLineStyle">
-<LineStyle>
-<color>${getSelectedKMLColor()}</color>
-<width>${width}</width>
-</LineStyle>
-</Style>
-`;
+    const documentNode = doc.createElement("Document");
+    doc.documentElement.appendChild(documentNode);
 
-  lineStrings.filter(line => selectedLines.has(line.id)).forEach(line => {
-    kml += "<Placemark>";
-    kml += "<styleUrl>#exportLineStyle</styleUrl>";
-    kml += `<name>${escapeXml(line.name)}</name>`;
-    kml += "<LineString><coordinates>";
+    //
+    // Style
+    //
 
-    line.coordinates.forEach(coord => {
-      kml += `${coord.longitude},${coord.latitude} `;
+    const style = doc.createElement("Style");
+    style.setAttribute("id", "exportLineStyle");
+
+    const lineStyle = doc.createElement("LineStyle");
+
+    const colorNode = doc.createElement("color");
+    colorNode.textContent = color;
+
+    const widthNode = doc.createElement("width");
+    widthNode.textContent = width;
+
+    lineStyle.appendChild(colorNode);
+    lineStyle.appendChild(widthNode);
+
+    style.appendChild(lineStyle);
+    documentNode.appendChild(style);
+
+    //
+    // Trilhas
+    //
+
+    lines.forEach(line => {
+
+        const placemark = doc.createElement("Placemark");
+
+        const styleUrl = doc.createElement("styleUrl");
+        styleUrl.textContent = "#exportLineStyle";
+
+        const name = doc.createElement("name");
+        name.textContent = line.name;
+
+        const lineString = doc.createElement("LineString");
+
+        const coordinates = doc.createElement("coordinates");
+
+        coordinates.textContent =
+            line.coordinates
+                .map(coord =>
+                    `${coord.longitude},${coord.latitude}`
+                )
+                .join(" ");
+
+        lineString.appendChild(coordinates);
+
+        placemark.appendChild(styleUrl);
+        placemark.appendChild(name);
+        placemark.appendChild(lineString);
+
+        documentNode.appendChild(placemark);
     });
 
-    kml += "</coordinates></LineString></Placemark>\n";
-  });
+    const serializer = new XMLSerializer();
 
-  kml += "</Document></kml>";
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        serializer.serializeToString(doc)
+    );
+}
 
-  downloadTextFile(kml, "export.kml", "application/vnd.google-earth.kml+xml");
-  
+function exportToKML() {
+
+    const width = Number(lineWidthText);
+
+    if (!Number.isFinite(width)) {
+        return;
+    }
+
+    const selectedTracks =
+        lineStrings.filter(
+            line => selectedLines.has(line.id)
+        );
+
+    const kml = buildTracksKML(
+        selectedTracks,
+        width,
+        getSelectedKMLColor()
+    );
+
+    downloadTextFile(
+        kml,
+        "export.kml",
+        "application/vnd.google-earth.kml+xml"
+    );
 }
 
 function uniqueConcatenatedName(base = "Trilha Concatenada") {
@@ -424,23 +488,61 @@ function uniqueTrailName(base) {
   return `${base} ${index}`;
 }
 
+function buildPlacemarksKML(placemarks) {
+
+    const doc = document.implementation.createDocument(
+        "http://www.opengis.net/kml/2.2",
+        "kml",
+        null
+    );
+
+    const documentNode = doc.createElement("Document");
+    doc.documentElement.appendChild(documentNode);
+
+    const folder = doc.createElement("Folder");
+    documentNode.appendChild(folder);
+
+    const folderName = doc.createElement("name");
+    folderName.textContent = "Pontos";
+    folder.appendChild(folderName);
+
+    placemarks.forEach(([name, coord]) => {
+
+        const placemark = doc.createElement("Placemark");
+
+        const placemarkName = doc.createElement("name");
+        placemarkName.textContent = name;
+        placemark.appendChild(placemarkName);
+
+        const point = doc.createElement("Point");
+
+        const coordinates = doc.createElement("coordinates");
+        coordinates.textContent =
+            `${coord.longitude},${coord.latitude}`;
+
+        point.appendChild(coordinates);
+        placemark.appendChild(point);
+
+        folder.appendChild(placemark);
+    });
+
+    const serializer = new XMLSerializer();
+
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        serializer.serializeToString(doc)
+    );
+}
+
 function savePlacemarksToKML(placemarks) {
-  let kml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
-  kml += "<kml xmlns=\"http://www.opengis.net/kml/2.2\">\n";
-  kml += "<Document><Folder><name>Pontos</name>\n";
 
-  placemarks.forEach(p => {
-    kml += `
-<Placemark>
-<name>${escapeXml(p[0])}</name>
-<Point><coordinates>${p[1].longitude},${p[1].latitude}</coordinates></Point>
-</Placemark>
-`;
-  });
+    const kml = buildPlacemarksKML(placemarks);
 
-  kml += "</Folder></Document></kml>";
-
-  downloadTextFile(kml, "placemarks.kml", "application/vnd.google-earth.kml+xml");
+    downloadTextFile(
+        kml,
+        "placemarks.kml",
+        "application/vnd.google-earth.kml+xml"
+    );
 }
 
 function distance(coordinateA, coordinateB) {
