@@ -18,7 +18,7 @@ const trailColors = [
   ["skyblue", "Skyblue", "ffebce87"]
 ];
 
-const kmPresets = [1, 2, 5, 10, 15, 20];
+const kmPresets = [1, 2, 5, 10, 20];
 
 let lineStrings = [];
 let selectedLines = new Set();
