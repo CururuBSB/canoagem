@@ -58,6 +58,12 @@ function init() {
   renderLineList();
   updateActionStates();
 
+  const shareRadio = document.querySelector('input[name="outputMode"][value="share"]');
+
+  if ( !navigator.share || !navigator.canShare) {
+    shareRadio.disabled = true;
+  }
+
   elements.viewMapButton.addEventListener("click", openMapPreview);
 
   elements.openFileButton.addEventListener('click', () => {
@@ -376,17 +382,34 @@ function getSelectedExportFormat() {
     )?.value || "kml";
 }
 
-function exportPlacemarks(placemarks) {
+function getSelectedOutputMode() {
+
+    return document.querySelector('input[name="outputMode"]:checked')?.value || "save";
+}
+
+async function exportPlacemarks(placemarks) {
     const format = getSelectedExportFormat();
+    const outputMode = getSelectedOutputMode();
+
+    let content;
+    let filename;
+    let mimeType;
 
     if (format === "gpx") {
-        const gpx = buildPlacemarksGPX(placemarks);
-        downloadTextFile(gpx,"placemarks.gpx","application/gpx+xml");
+        content = buildPlacemarksGPX(placemarks);
+        filename = "placemarks.gpx";
+        mimeType = "application/gpx+xml";
+    } else {
+        content = buildPlacemarksKML(placemarks);
+        filename = "placemarks.gpx";
+        mimeType = "application/vnd.google-earth.kml+xml";
+    }
+    if ( outputMode === "save") {
+        downloadTextFile(content,filename,mimeType);
         return;
     }
 
-    const kml = buildPlacemarksKML(placemarks);
-    downloadTextFile(kml,"placemarks.kml","application/vnd.google-earth.kml+xml");
+    await shareTextFile(content,filename,mimeType);
 }
 
 function buildPlacemarksGPX(placemarks) {
@@ -532,11 +555,7 @@ function uniqueTrailName(base) {
 
 function buildPlacemarksKML(placemarks) {
 
-    const doc = document.implementation.createDocument(
-        "http://www.opengis.net/kml/2.2",
-        "kml",
-        null
-    );
+    const doc = document.implementation.createDocument("http://www.opengis.net/kml/2.2","kml",null);
 
     const documentNode = doc.createElement("Document");
     doc.documentElement.appendChild(documentNode);
@@ -640,6 +659,11 @@ function downloadTextFile(text, filename, type) {
   link.click();
   link.remove();
   URL.revokeObjectURL(url);
+}
+
+async function shareTextFile(content,filename,mimeType) {
+    const file = new File([content],filename,{ type: mimeType });
+    await navigator.share({title: filename,files: [file]});
 }
 
 async function sendTrailInfo(line) {
