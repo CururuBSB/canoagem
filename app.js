@@ -369,6 +369,49 @@ function generatePlacemarks(line) {
   sendTrailInfo(line);
 }
 
+function buildPlacemarksGPX(placemarks) {
+
+    const doc = document.implementation.createDocument(
+        "http://www.topografix.com/GPX/1/1",
+        "gpx",
+        null
+    );
+
+    const gpx = doc.documentElement;
+
+    gpx.setAttribute("version", "1.1");
+    gpx.setAttribute("creator", "KML Trail Tools");
+
+    placemarks.forEach(([name, coord]) => {
+
+        const wpt = doc.createElement("wpt");
+
+        wpt.setAttribute(
+            "lat",
+            coord.latitude.toFixed(6)
+        );
+
+        wpt.setAttribute(
+            "lon",
+            coord.longitude.toFixed(6)
+        );
+
+        const nameNode =
+            doc.createElement("name");
+
+        nameNode.textContent = name;
+
+        wpt.appendChild(nameNode);
+
+        gpx.appendChild(wpt);
+    });
+
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n' +
+        new XMLSerializer().serializeToString(doc)
+    );
+}
+
 function buildTracksKML(lines, width, color) {
 
     const doc = document.implementation.createDocument(
