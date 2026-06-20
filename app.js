@@ -410,6 +410,12 @@ function buildPlacemarksGPX(placemarks) {
         nameNode.textContent = name;
         wpt.appendChild(nameNode);
         gpx.appendChild(wpt);
+      
+        const descNode = doc.createElementNS(GPX_NS,"desc");
+
+        descNode.textContent = name;
+        wpt.appendChild(descNode);
+      
     });
 
     return ('<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(doc));
