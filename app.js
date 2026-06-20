@@ -7,8 +7,6 @@ const trailColors = [
   ["yellow", "Yellow", "ff00ffff"],
   ["cyan", "Cyan", "ffffff00"],
   ["magenta", "Magenta", "ffff00ff"],
-  ["silver", "Silver", "ffc0c0c0"],
-  ["gray", "Gray", "ff808080"],
   ["maroon", "Maroon", "ff000080"],
   ["olive", "Olive", "ff008080"],
   ["purple", "Purple", "ff800080"],
