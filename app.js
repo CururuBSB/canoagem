@@ -364,19 +364,34 @@ function generatePlacemarks(line) {
     placemarks.push([`${placemarkPrefix}FIM`, lastPoint]);
   }
 
-  savePlacemarksToKML(placemarks);
+  exportPlacemarks(placemarks);
   
   sendTrailInfo(line);
 }
 
+function getSelectedExportFormat() {
+
+    return document.querySelector(
+        'input[name="exportFormat"]:checked'
+    )?.value || "kml";
+}
+
+function exportPlacemarks(placemarks) {
+    const format = getSelectedExportFormat();
+
+    if (format === "gpx") {
+        const gpx = buildPlacemarksGPX(placemarks);
+        downloadTextFile(gpx,"placemarks.gpx","application/gpx+xml");
+        return;
+    }
+
+    const kml = buildPlacemarksKML(placemarks);
+    downloadTextFile(kml,"placemarks.kml","application/vnd.google-earth.kml+xml");
+}
+
 function buildPlacemarksGPX(placemarks) {
 
-    const doc = document.implementation.createDocument(
-        "http://www.topografix.com/GPX/1/1",
-        "gpx",
-        null
-    );
-
+    const doc = document.implementation.createDocument("http://www.topografix.com/GPX/1/1","gpx",null);
     const gpx = doc.documentElement;
 
     gpx.setAttribute("version", "1.1");
@@ -386,39 +401,22 @@ function buildPlacemarksGPX(placemarks) {
 
         const wpt = doc.createElement("wpt");
 
-        wpt.setAttribute(
-            "lat",
-            coord.latitude.toFixed(6)
-        );
+        wpt.setAttribute("lat",coord.latitude.toFixed(6));
+        wpt.setAttribute("lon",coord.longitude.toFixed(6));
 
-        wpt.setAttribute(
-            "lon",
-            coord.longitude.toFixed(6)
-        );
-
-        const nameNode =
-            doc.createElement("name");
+        const nameNode = doc.createElement("name");
 
         nameNode.textContent = name;
-
         wpt.appendChild(nameNode);
-
         gpx.appendChild(wpt);
     });
 
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n' +
-        new XMLSerializer().serializeToString(doc)
-    );
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n' + new XMLSerializer().serializeToString(doc));
 }
 
 function buildTracksKML(lines, width, color) {
 
-    const doc = document.implementation.createDocument(
-        "http://www.opengis.net/kml/2.2",
-        "kml",
-        null
-    );
+    const doc = document.implementation.createDocument("http://www.opengis.net/kml/2.2","kml",null);
 
     const documentNode = doc.createElement("Document");
     doc.documentElement.appendChild(documentNode);
@@ -462,11 +460,8 @@ function buildTracksKML(lines, width, color) {
 
         const coordinates = doc.createElement("coordinates");
 
-        coordinates.textContent =
-            line.coordinates
-                .map(coord =>
-                    `${coord.longitude},${coord.latitude}`
-                )
+        coordinates.textContent = line.coordinates
+                .map(coord => `${coord.longitude},${coord.latitude}`)
                 .join(" ");
 
         lineString.appendChild(coordinates);
@@ -480,10 +475,7 @@ function buildTracksKML(lines, width, color) {
 
     const serializer = new XMLSerializer();
 
-    return (
-        '<?xml version="1.0" encoding="UTF-8"?>\n' +
-        serializer.serializeToString(doc)
-    );
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n' + serializer.serializeToString(doc));
 }
 
 function exportToKML() {
