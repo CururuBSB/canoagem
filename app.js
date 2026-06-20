@@ -391,7 +391,8 @@ function exportPlacemarks(placemarks) {
 
 function buildPlacemarksGPX(placemarks) {
 
-    const doc = document.implementation.createDocument("http://www.topografix.com/GPX/1/1","gpx",null);
+    const GPX_NS = "http://www.topografix.com/GPX/1/1";
+    const doc = document.implementation.createDocument(GPX_NS,"gpx",null);
     const gpx = doc.documentElement;
 
     gpx.setAttribute("version", "1.1");
@@ -399,12 +400,12 @@ function buildPlacemarksGPX(placemarks) {
 
     placemarks.forEach(([name, coord]) => {
 
-        const wpt = doc.createElement("wpt");
+        const wpt = doc.createElementNS(GPX_NS,"wpt");
 
         wpt.setAttribute("lat",coord.latitude.toFixed(6));
         wpt.setAttribute("lon",coord.longitude.toFixed(6));
 
-        const nameNode = doc.createElement("name");
+        const nameNode = doc.createElementNS(GPX_NS,"name");
 
         nameNode.textContent = name;
         wpt.appendChild(nameNode);
