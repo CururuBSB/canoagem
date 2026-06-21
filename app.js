@@ -115,7 +115,7 @@ function init() {
     );
     
     if (!isMobile) {
-        elements.sharePlacemarksButton.hidden = true;
+        elements.sharePlacemarksButton.hidden = false;
     }
 
 }
@@ -401,7 +401,6 @@ function getSelectedOutputMode() {
 
 async function exportPlacemarks(placemarks,mode) {
     const format = getSelectedExportFormat();
-    const outputMode = getSelectedOutputMode();
 
     let content;
     let filename;
