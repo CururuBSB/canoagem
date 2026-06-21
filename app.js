@@ -35,7 +35,8 @@ const elements = {
     lineWidth: document.getElementById("lineWidth"),
     lineList: document.getElementById("lineList"),
     selectionCount: document.getElementById("selectionCount"),
-    generatePlacemarksButton: document.getElementById("generatePlacemarksButton"),
+    savePlacemarksButton: document.getElementById("savePlacemarksButton"),
+    sharePlacemarksButton: document.getElementById("sharePlacemarksButton"),
     reverseLineButton: document.getElementById("reverseLineButton"),
     concatenateButton: document.getElementById("concatenateButton"),
     exportButton: document.getElementById("exportButton"),
@@ -54,16 +55,6 @@ function init() {
     renderIntervalChips();
     renderColorPicker();
     renderLineList();
-    updateActionStates();
-
-    const shareRadio = document.querySelector('input[name="outputMode"][value="share"]');
-    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
-
-    shareRadio.disabled = !isMobile;
-
-    /* if (!navigator.share || !navigator.canShare) {
-        shareRadio.disabled = true;
-    } */
 
     elements.viewMapButton.addEventListener("click", openMapPreview);
 
@@ -90,11 +81,19 @@ function init() {
         lineWidthText = event.target.value;
     });
 
-    elements.generatePlacemarksButton.addEventListener("click", () => {
+    elements.savePlacemarksButton.addEventListener("click", () => {
         const firstID = selectedLines.values().next().value;
         const first = lineStrings.find(line => line.id === firstID);
         if (first) {
-            generatePlacemarks(first);
+            generatePlacemarks(first,"save");
+        }
+    });
+
+     elements.sharePlacemarksButton.addEventListener("click", () => {
+        const firstID = selectedLines.values().next().value;
+        const first = lineStrings.find(line => line.id === firstID);
+        if (first) {
+            generatePlacemarks(first,"share");
         }
     });
 
@@ -108,10 +107,17 @@ function init() {
 
     elements.exportButton.addEventListener("click", () => {exportToKML();});
 
-    document.querySelectorAll('input[name="outputMode"]')
-        .forEach(radio => {radio.addEventListener("change",updateGenerateButtonCaption);});
+    updateActionStates();
 
-    updateGenerateButtonCaption();
+    const isMobile =
+    /Android|iPhone|iPad/i.test(
+        navigator.userAgent
+    );
+    
+    if (!isMobile) {
+        elements.sharePlacemarksButton.hidden = true;
+    }
+
 }
 
 function renderIntervalChips() {
@@ -191,7 +197,8 @@ function renderLineList() {
 function updateActionStates() {
     const selectedCount = selectedLines.size;
 
-    elements.generatePlacemarksButton.disabled = selectedCount !== 1;
+    elements.savePlacemarksButton.disabled = selectedCount !== 1;
+    elements.sharePlacemarksButton.disabled = selectedCount !== 1;
     elements.reverseLineButton.disabled = selectedCount !== 1;
     elements.concatenateButton.disabled = selectedCount < 2;
     elements.exportButton.disabled = selectedCount !== 1;
@@ -334,7 +341,7 @@ function concatenateTrails() {
     renderLineList();
 }
 
-function generatePlacemarks(line) {
+function generatePlacemarks(line, mode) {
     const intervalMeters = selectedIntervalKm * 1000;
 
     const placemarks = [];
@@ -392,18 +399,7 @@ function getSelectedOutputMode() {
     return document.querySelector('input[name="outputMode"]:checked')?.value || "save";
 }
 
-function updateGenerateButtonCaption() {
-
-    const mode = getSelectedOutputMode();
-
-    elements.generatePlacemarksButton.textContent = mode === "share"
-            ? "Compartilhar Pontos"
-            : "Salvar Pontos";
-}
-
-
-
-async function exportPlacemarks(placemarks) {
+async function exportPlacemarks(placemarks,mode="save") {
     const format = getSelectedExportFormat();
     const outputMode = getSelectedOutputMode();
 
@@ -420,12 +416,15 @@ async function exportPlacemarks(placemarks) {
         filename = "placemarks.kml";
         mimeType = "application/vnd.google-earth.kml+xml";
     }
-    if (outputMode === "save") {
-        downloadTextFile(content, filename, mimeType);
+
+    if (mode === "share") {
+
+        await shareTextFile(content,filename,mimeType);
+
         return;
     }
-    
-    await shareTextFile(
+
+    downloadTextFile(
         content,
         filename,
         mimeType
