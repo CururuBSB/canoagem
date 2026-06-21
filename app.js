@@ -683,12 +683,12 @@ async function shareTextFile(content, filename, mimeType) {
         files: [file]
     }));
 
-    const file = new File([content], filename, {
+    const testFile = new File([content], filename, {
         type: mimeType
     });
     await navigator.share({
         title: filename,
-        files: [file]
+        files: [testFile]
     });
 }
 
