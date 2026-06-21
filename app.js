@@ -407,9 +407,7 @@ async function exportPlacemarks(placemarks) {
         return;
     }
 
-    console.log("Compartilhar",filename);
-
-    try {
+   
 
     await shareTextFile(
         content,
@@ -417,18 +415,7 @@ async function exportPlacemarks(placemarks) {
         mimeType
     );
 
-}
-catch (error) {
 
-    console.error(
-        "Falha ao compartilhar:",
-        error
-    );
-
-    alert(
-        "O compartilhamento não é suportado neste navegador."
-    );
-}
 }
 
 function buildPlacemarksGPX(placemarks) {
