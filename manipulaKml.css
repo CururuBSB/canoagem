@@ -1,0 +1,355 @@
+ :root {
+        --verde-escuro: #1a3a2a;
+        --verde-medio: #2d5a3d;
+        --verde-agua: #4a8c6a;
+        --dourado: #c8a84b;
+        --bege: #f5efe0;
+        --bg: #1a3a2a;
+        --surface: rgba(255, 255, 255, 0.03);
+        --surface-hover: rgba(200, 168, 75, 0.06);
+        --text: #f5efe0;
+        --muted: rgba(245, 239, 224, 0.55);
+        --border: rgba(245, 239, 224, 0.1);
+        --accent: #c8a84b;
+        --accent-strong: #d9b95b;
+        --selected-bg: #2d5a3d;
+        --chip-bg: rgba(255, 255, 255, 0.05);
+        --danger: #d66;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Lato", sans-serif;
+        font-weight: 300;
+        background: var(--bg);
+        color: var(--text);
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background: radial-gradient(ellipse at 20% 50%,
+                rgba(74, 140, 106, 0.12) 0%,
+                transparent 60%),
+            radial-gradient(ellipse at 80% 20%,
+                rgba(200, 168, 75, 0.07) 0%,
+                transparent 50%),
+            radial-gradient(ellipse at 60% 80%,
+                rgba(45, 90, 61, 0.2) 0%,
+                transparent 55%);
+        pointer-events: none;
+        z-index: -1;
+    }
+
+    .page-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        color: var(--bege);
+        text-align: center;
+        margin: 24px 0 32px;
+    }
+
+    button,
+    input,
+    select {
+        font: inherit;
+    }
+
+    button {
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--bege);
+    }
+
+    button:hover {
+        border-color: var(--dourado);
+        background: rgba(200, 168, 75, 0.08);
+    }
+
+    button:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+    }
+
+    input,
+    select {
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--bege);
+        border: 1px solid var(--border);
+    }
+
+    input:focus,
+    select:focus {
+        outline: none;
+        border-color: var(--dourado);
+    }
+
+    .app-shell {
+        width: min(980px, 100%);
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+    .toolbar,
+    .list-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        backdrop-filter: blur(6px);
+    }
+
+    .top-row,
+    .controls-grid,
+    .list-header,
+    .line-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .top-row {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 12px;
+    }
+
+    .status {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    .controls-grid {
+        margin-top: 18px;
+        align-items: end;
+        flex-wrap: wrap;
+    }
+
+    fieldset {
+        min-width: min(380px, 100%);
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    legend {
+        margin-bottom: 6px;
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .chip {
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--bege);
+    }
+
+    .chip.selected {
+        background: var(--verde-medio);
+        border-color: var(--dourado);
+        color: white;
+    }
+
+    .compact-field {
+        display: inline-block;
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    .compact-field input,
+    .compact-field select {
+        min-width: 104px;
+        color: var(--text);
+        font-size: 14px;
+        margin: 0 12px 0 12px;
+    }
+
+    .compact-field input#placemarkPrefix {
+        width: 130px;
+    }
+
+    .compact-field input#lineWidth {
+        width: 72px;
+    }
+
+    .list-panel {
+        margin-top: 18px;
+        overflow: hidden;
+    }
+
+    .list-header {
+        justify-content: space-between;
+        min-height: 48px;
+        border-bottom: 1px solid var(--border);
+        padding: 10px 14px;
+    }
+
+    .line-list {
+        height: 300px;
+        overflow: auto;
+    }
+
+    .empty-state {
+        display: grid;
+        place-items: center;
+        height: 100%;
+        color: var(--muted);
+        text-align: center;
+        padding: 18px;
+    }
+
+    .line-item {
+        border-bottom: 1px solid rgba(245, 239, 224, 0.06);
+    }
+
+    .line-item:hover {
+        background: rgba(200, 168, 75, 0.05);
+    }
+
+    .line-name {
+        flex: 1;
+        min-width: 0;
+        border: 0;
+        border-radius: 5px;
+        background: transparent;
+        text-align: left;
+        overflow-wrap: anywhere;
+    }
+
+    .line-name.selected {
+        background: var(--verde-medio);
+        color: white;
+    }
+
+    .move-buttons {
+        display: flex;
+        gap: 6px;
+    }
+
+    .move-buttons button {
+        width: 36px;
+        padding: 0;
+        font-size: 17px;
+    }
+
+    .actions {
+        margin-top: 16px;
+        display: grid;
+        gap: 10px;
+    }
+
+    .action-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .action-button {
+        min-width: 170px;
+        background: var(--surface);
+        font-weight: 600;
+    }
+
+    .primary-action {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #ffffff;
+    }
+
+    .primary-action:hover {
+        background: var(--accent-strong);
+    }
+
+    .tool-panel {
+        margin-top: 18px;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(245, 239, 224, 0.08);
+        border-radius: 8px;
+        backdrop-filter: blur(6px);
+    }
+
+    .tool-panel h1 {
+        margin: 0 0 16px 0;
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(245, 239, 224, 0.08);
+        margin-bottom: 18px;
+    }
+
+    .tool-panel h2 {
+        margin: 0 0 16px 0;
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--dourado);
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(245, 239, 224, 0.08);
+        margin-bottom: 18px;
+    }
+
+    .radio-group {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .radio-block {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+
+    .radio-block label:has(input[type="radio"]:disabled) {
+        opacity: 0.45;
+        color: var(--muted);
+        cursor: not-allowed;
+    }
+
+    .radio-title {
+        color: var(--dourado);
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        min-width: 90px;
+    }
+
+    @media (max-width: 640px) {
+        .app-shell {
+            padding: 14px;
+        }
+
+        .controls-grid {
+            align-items: stretch;
+        }
+
+        .compact-field,
+        .compact-field input,
+        .compact-field select,
+        .action-button {
+            width: 100%;
+        }
+
+        .line-item {
+            align-items: stretch;
+        }
+    }
