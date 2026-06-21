@@ -106,9 +106,12 @@ function init() {
         concatenateTrails();
     });
 
-    elements.exportButton.addEventListener("click", () => {
-        exportToKML();
-    });
+    elements.exportButton.addEventListener("click", () => {exportToKML();});
+
+    document.querySelectorAll('input[name="outputMode"]')
+        .forEach(radio => {radio.addEventListener("change",updateGenerateButtonCaption);});
+
+    updateGenerateButtonCaption();
 }
 
 function renderIntervalChips() {
@@ -388,6 +391,17 @@ function getSelectedOutputMode() {
 
     return document.querySelector('input[name="outputMode"]:checked')?.value || "save";
 }
+
+function updateGenerateButtonCaption() {
+
+    const mode = getSelectedOutputMode();
+
+    elements.generatePlacemarksButton.textContent = mode === "share"
+            ? "Compartilhar Pontos"
+            : "Salvar Pontos";
+}
+
+
 
 async function exportPlacemarks(placemarks) {
     const format = getSelectedExportFormat();
