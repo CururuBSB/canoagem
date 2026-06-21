@@ -57,10 +57,13 @@ function init() {
     updateActionStates();
 
     const shareRadio = document.querySelector('input[name="outputMode"][value="share"]');
+    const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
 
-    if (!navigator.share || !navigator.canShare) {
+    shareRadio.disabled = !isMobile;
+
+    /* if (!navigator.share || !navigator.canShare) {
         shareRadio.disabled = true;
-    }
+    } */
 
     elements.viewMapButton.addEventListener("click", openMapPreview);
 
