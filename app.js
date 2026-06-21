@@ -384,7 +384,7 @@ function generatePlacemarks(line, mode) {
         placemarks.push([`${placemarkPrefix}FIM`, lastPoint]);
     }
 
-    exportPlacemarks(placemarks);
+    exportPlacemarks(placemarks,mode);
 
     sendTrailInfo(line);
 }
@@ -399,7 +399,7 @@ function getSelectedOutputMode() {
     return document.querySelector('input[name="outputMode"]:checked')?.value || "save";
 }
 
-async function exportPlacemarks(placemarks,mode="save") {
+async function exportPlacemarks(placemarks,mode) {
     const format = getSelectedExportFormat();
     const outputMode = getSelectedOutputMode();
 
@@ -418,9 +418,7 @@ async function exportPlacemarks(placemarks,mode="save") {
     }
 
     if (mode === "share") {
-
         await shareTextFile(content,filename,mimeType);
-
         return;
     }
 
