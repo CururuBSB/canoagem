@@ -1,4 +1,4 @@
-const trailColors = [
+const trailColors = [ 
     ["white", "White", "ffffffff"],
     ["red", "Red", "ff0000ff"],
     ["green", "Green", "ff008000"],
