@@ -294,6 +294,16 @@
         backdrop-filter: blur(6px);
     }
 
+    .tool-panel h1 {
+        margin: 0 0 16px 0;
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(245, 239, 224, 0.08);
+        margin-bottom: 18px;
+    }
+
     .tool-panel h2 {
         margin: 0 0 16px 0;
         font-family: "Playfair Display", serif;
