@@ -397,8 +397,6 @@ async function exportPlacemarks(placemarks) {
     let filename;
     let mimeType;
 
-    console.log("Formato:", getSelectedExportFormat());
-
     if (format === "gpx") {
         content = buildPlacemarksGPX(placemarks);
         filename = "placemarks.gpx";
@@ -673,22 +671,13 @@ function downloadTextFile(text, filename, type) {
 
 async function shareTextFile(content, filename, mimeType) {
 
-    console.log("share", navigator.share);
-    console.log("canShare", navigator.canShare);
     const file = new File([content], filename, {
         type: mimeType
     });
-    console.log("canShareFile", navigator.canShare?.({
-        files: [file]
-    }));
-    console.log("Tentando compartilhar");
-    const testFile = new File([content], filename, {
-        type: mimeType
-    });
-    alert("vou compartilhar");
+
     await navigator.share({
         title: filename,
-        files: [testFile]
+        files: [file]
     });
 }
 
@@ -705,20 +694,17 @@ async function sendTrailInfo(line) {
         fim_lat: lastPoint.latitude,
         fim_lon: lastPoint.longitude
     };
-    try {
-        const response = await fetch(
-            "https://formspree.io/f/xnjykdae", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json"
-                },
-                body: JSON.stringify(payload)
-            }
-        );
-    } catch (error) {
-        console.error("Erro ao enviar:", error);
-    }
+
+    const response = await fetch(
+        "https://formspree.io/f/xnjykdae", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(payload)
+        }
+    );
 }
 
 function openMapPreview() {
