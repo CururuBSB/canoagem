@@ -117,7 +117,6 @@ function init() {
     if (!isMobile) {
         elements.sharePlacemarksButton.hidden = true;
     }
-
 }
 
 function renderIntervalChips() {
