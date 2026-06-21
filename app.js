@@ -662,6 +662,12 @@ function downloadTextFile(text, filename, type) {
 }
 
 async function shareTextFile(content,filename,mimeType) {
+
+    console.log("share",navigator.share);
+    console.log("canShare",navigator.canShare);
+    const file = new File([content],filename,{ type: mimeType });
+    console.log("canShareFile",navigator.canShare?.({files: [file]}));
+  
     const file = new File([content],filename,{ type: mimeType });
     await navigator.share({title: filename,files: [file]});
 }
