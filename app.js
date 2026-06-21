@@ -115,7 +115,7 @@ function init() {
     );
     
     if (!isMobile) {
-        elements.sharePlacemarksButton.hidden = false;
+        elements.sharePlacemarksButton.hidden = true;
     }
 
 }
