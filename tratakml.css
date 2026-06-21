@@ -197,18 +197,6 @@
         padding: 10px 14px;
     }
 
-    .list-header h1 {
-        font-family: "Playfair Display", serif;
-        color: var(--bege);
-        font-size: 1.3rem;
-        font-weight: 700;
-    }
-
-    .list-header span {
-        color: var(--muted);
-        font-size: 13px;
-    }
-
     .line-list {
         height: 300px;
         overflow: auto;
