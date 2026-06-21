@@ -375,9 +375,7 @@ function generatePlacemarks(line) {
 
 function getSelectedExportFormat() {
 
-    return document.querySelector(
-        'input[name="exportFormat"]:checked'
-    )?.value || "kml";
+    return document.querySelector('input[name="exportFormat"]:checked')?.value || "kml";
 }
 
 function getSelectedOutputMode() {
@@ -393,6 +391,8 @@ async function exportPlacemarks(placemarks) {
     let filename;
     let mimeType;
 
+  console.log("Formato:",getSelectedExportFormat());
+
     if (format === "gpx") {
         content = buildPlacemarksGPX(placemarks);
         filename = "placemarks.gpx";
@@ -406,6 +406,8 @@ async function exportPlacemarks(placemarks) {
         downloadTextFile(content,filename,mimeType);
         return;
     }
+
+    console.log("Compartilhar",filename);
 
     await shareTextFile(content,filename,mimeType);
 }
