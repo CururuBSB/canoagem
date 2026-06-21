@@ -409,16 +409,12 @@ async function exportPlacemarks(placemarks) {
         downloadTextFile(content, filename, mimeType);
         return;
     }
-
-
-
+    
     await shareTextFile(
         content,
         filename,
         mimeType
     );
-
-
 }
 
 function buildPlacemarksGPX(placemarks) {
@@ -682,10 +678,11 @@ async function shareTextFile(content, filename, mimeType) {
     console.log("canShareFile", navigator.canShare?.({
         files: [file]
     }));
-
+    console.log("Tentando compartilhar");
     const testFile = new File([content], filename, {
         type: mimeType
     });
+    alert("vou compartilhar");
     await navigator.share({
         title: filename,
         files: [testFile]
