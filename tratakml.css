@@ -332,6 +332,12 @@ legend {
     flex-wrap: wrap;
 }
 
+.radio-block label:has(input[type="radio"]:disabled) {
+    opacity: 0.45;
+    color: var(--muted);
+    cursor: not-allowed;
+}
+
 .radio-title {
     color: var(--dourado);
     font-size: 0.85rem;
