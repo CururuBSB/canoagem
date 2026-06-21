@@ -399,7 +399,7 @@ async function exportPlacemarks(placemarks) {
         mimeType = "application/gpx+xml";
     } else {
         content = buildPlacemarksKML(placemarks);
-        filename = "placemarks.gpx";
+        filename = "placemarks.kml";
         mimeType = "application/vnd.google-earth.kml+xml";
     }
     if ( outputMode === "save") {
@@ -409,7 +409,26 @@ async function exportPlacemarks(placemarks) {
 
     console.log("Compartilhar",filename);
 
-    await shareTextFile(content,filename,mimeType);
+    try {
+
+    await shareTextFile(
+        content,
+        filename,
+        mimeType
+    );
+
+}
+catch (error) {
+
+    console.error(
+        "Falha ao compartilhar:",
+        error
+    );
+
+    alert(
+        "O compartilhamento não é suportado neste navegador."
+    );
+}
 }
 
 function buildPlacemarksGPX(placemarks) {
