@@ -5,7 +5,9 @@
     "Carboidratos",
     "Temperos",
     "Laticínios",
-    "Conservas"
+    "Conservas",
+    "Óleos e Gorduras",
+    "Bebidas"
   ],
   "ingredientes": [
     {
@@ -59,7 +61,7 @@
     {
       "id": "caldo-de-legumes",
       "nome": "caldo de legumes",
-      "categoria": "Conservas",
+      "categoria": "Temperos",
       "unidadeCalculo": "litro",
       "unidadeCompra": "litro",
       "fatorCompra": 1.0
@@ -75,7 +77,7 @@
     {
       "id": "feijoada-zapt",
       "nome": "feijoada zapt",
-      "categoria": "Conservas",
+      "categoria": "Carboidratos",
       "unidadeCalculo": "g",
       "unidadeCompra": "pacote 500g",
       "fatorCompra": 0.002
@@ -83,7 +85,7 @@
     {
       "id": "feijao-fradinho-pronto",
       "nome": "feijão fradinho pronto",
-      "categoria": "Conservas",
+      "categoria": "Carboidratos",
       "unidadeCalculo": "g",
       "unidadeCompra": "tetra pak 380g",
       "fatorCompra": 0.002631578947368421
@@ -115,7 +117,7 @@
     {
       "id": "vinho-branco",
       "nome": "vinho branco",
-      "categoria": "Conservas",
+      "categoria": "Bebidas",
       "unidadeCalculo": "ml",
       "unidadeCompra": "garrafa 750ml",
       "fatorCompra": 0.0013333333333333333
@@ -123,7 +125,7 @@
     {
       "id": "vinho-tinto",
       "nome": "vinho tinto",
-      "categoria": "Conservas",
+      "categoria": "Bebidas",
       "unidadeCalculo": "ml",
       "unidadeCompra": "garrafa 750ml",
       "fatorCompra": 0.0013333333333333333
@@ -339,7 +341,7 @@
     {
       "id": "azeite",
       "nome": "azeite",
-      "categoria": "Temperos",
+      "categoria": "Óleos e Gorduras",
       "unidadeCalculo": "ml",
       "unidadeCompra": "ml",
       "fatorCompra": 1.0
@@ -347,7 +349,7 @@
     {
       "id": "banha",
       "nome": "banha",
-      "categoria": "Temperos",
+      "categoria": "Óleos e Gorduras",
       "unidadeCalculo": "ml",
       "unidadeCompra": "ml",
       "fatorCompra": 1.0
@@ -379,7 +381,7 @@
     {
       "id": "oleo",
       "nome": "óleo",
-      "categoria": "Temperos",
+      "categoria": "Óleos e Gorduras",
       "unidadeCalculo": "g",
       "unidadeCompra": "embalagem 900ml",
       "fatorCompra": 0.0011111111111111111
