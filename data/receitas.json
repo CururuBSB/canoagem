@@ -1,0 +1,834 @@
+{
+  "categorias": [
+    "Raiz",
+    "Gourmet de barranco",
+    "Paulista nutella"
+  ],
+  "receitas": [
+    {
+      "id": "arroz-carreteiro",
+      "ordemCategoria": 1,
+      "categoria": "Raiz",
+      "nome": "arroz carreteiro",
+      "rendimento": 4.0,
+      "modoPreparo": "Dourar bacon e carne. Acrescentar linguiça. Acrescentar alho e cebola. Acrescentar arroz e louro. Água. ",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 2.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "arroz",
+          "quantidade": 2.0,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "bacon",
+          "quantidade": 70.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "banha",
+          "quantidade": 2.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "calabresa",
+          "quantidade": 250.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "carne-seca",
+          "quantidade": 100.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 0.5,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "folha-de-louro",
+          "quantidade": 2.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "tomate",
+          "quantidade": 4.0,
+          "unidade": "unid"
+        }
+      ]
+    },
+    {
+      "id": "arroz-com-carne-na-lata",
+      "ordemCategoria": 1,
+      "categoria": "Raiz",
+      "nome": "arroz com carne na lata",
+      "rendimento": 4.0,
+      "modoPreparo": "Aquecer a carne, retirar e picar se grande. Retirar excesso de banha. Volte a carne e temperos. Adicione arroz. Água.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 1.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "arroz",
+          "quantidade": 2.0,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "banha",
+          "quantidade": 2.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "carne-na-lata",
+          "quantidade": 200.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "milho",
+          "quantidade": 1.0,
+          "unidade": "sachê 340g"
+        },
+        {
+          "ingredienteId": "tomate",
+          "quantidade": 4.0,
+          "unidade": "unid"
+        }
+      ]
+    },
+    {
+      "id": "arroz-puro-pro-peixe",
+      "ordemCategoria": 1,
+      "categoria": "Raiz",
+      "nome": "arroz puro pro peixe",
+      "rendimento": 1.0,
+      "modoPreparo": "Dourar temperos. Arroz. Água.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 1.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "arroz",
+          "quantidade": 0.25,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "banha",
+          "quantidade": 1.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 0.25,
+          "unidade": "unid"
+        }
+      ]
+    },
+    {
+      "id": "baiao-de-dois",
+      "ordemCategoria": 1,
+      "categoria": "Raiz",
+      "nome": "baião de dois",
+      "rendimento": 2.0,
+      "modoPreparo": "Dourar a calabresa. Acrescentar cebola e alho. Acrescentar arroz. Água. Quando ficar macio, acrescente o feijão drenado.",
+      "ingredientes": [
+        {
+          "ingredienteId": "arroz",
+          "quantidade": 1.0,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "banha",
+          "quantidade": 1.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "calabresa",
+          "quantidade": 200.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "feijao-fradinho-pronto",
+          "quantidade": 380.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "provolone",
+          "quantidade": 50.0,
+          "unidade": "g"
+        }
+      ]
+    },
+    {
+      "id": "arroz-biro-biro",
+      "ordemCategoria": 2,
+      "categoria": "Gourmet de barranco",
+      "nome": "arroz biro biro",
+      "rendimento": 4.0,
+      "modoPreparo": "Dourar bacon e linguiça. Acrescentar alho e cebola. Acrescentar arroz. Água. Qdo pronto, acrescentar ovos mexidos e batata palha.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 2.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "arroz",
+          "quantidade": 2.0,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "azeite",
+          "quantidade": 4.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "bacon",
+          "quantidade": 70.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "banha",
+          "quantidade": 1.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "batata-palha",
+          "quantidade": 240.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "calabresa",
+          "quantidade": 100.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 0.25,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "ovo",
+          "quantidade": 2.0,
+          "unidade": "unid"
+        }
+      ]
+    },
+    {
+      "id": "arroz-de-peixe",
+      "ordemCategoria": 2,
+      "categoria": "Gourmet de barranco",
+      "nome": "arroz de peixe",
+      "rendimento": 4.0,
+      "modoPreparo": "Temperar peixe. Dourar cebola e alho. Peixe. Vinho e pouco de água. Partir peixe em lascas. Arroz, cúrcuma e louro. Água.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 2.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "arroz",
+          "quantidade": 1.5,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "azeite",
+          "quantidade": 1.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "curcuma",
+          "quantidade": 1.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "limao",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "folha-de-louro",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "peixe",
+          "quantidade": 4.0,
+          "unidade": "filés"
+        },
+        {
+          "ingredienteId": "ramo-de-tomilho",
+          "quantidade": 2.0,
+          "unidade": "ramos"
+        },
+        {
+          "ingredienteId": "vinho-branco",
+          "quantidade": 1.0,
+          "unidade": "xícara(s)"
+        }
+      ]
+    },
+    {
+      "id": "arroz-de-puta-rica",
+      "ordemCategoria": 2,
+      "categoria": "Gourmet de barranco",
+      "nome": "arroz de puta rica",
+      "rendimento": 4.0,
+      "modoPreparo": "Dourar a carne. Acrescentar cebola e alho. Acrescentar frango e costela defumados. Acrescentar pimetão, louro e açafrão. Acresentar o arroz. Acrescentar tomate. Água.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 4.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "arroz",
+          "quantidade": 2.0,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "bacon",
+          "quantidade": 100.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "banha",
+          "quantidade": 4.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "calabresa",
+          "quantidade": 100.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "carne-seca",
+          "quantidade": 150.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 2.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "costela-defumada",
+          "quantidade": 100.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "curcuma",
+          "quantidade": 2.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "folha-de-louro",
+          "quantidade": 4.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "frango-defumado",
+          "quantidade": 300.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "milho",
+          "quantidade": 340.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "pimentao",
+          "quantidade": 1.0,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "tomate",
+          "quantidade": 4.0,
+          "unidade": "unid"
+        }
+      ]
+    },
+    {
+      "id": "bacalhau-betobim",
+      "ordemCategoria": 2,
+      "categoria": "Gourmet de barranco",
+      "nome": "bacalhau betobim",
+      "rendimento": 4.0,
+      "modoPreparo": "Dessalgar bacalhau. Cotar cebolas e batatas em rodelas. Distribuir em camadas: bataba, cebola, azeitonas e bacalhau, repetir até acabarem os ingredientes. Regar com azeite. Cozinhar até a batata ficar macia.",
+      "ingredientes": [
+        {
+          "ingredienteId": "bacalhau-desfiado",
+          "quantidade": 500.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "batata",
+          "quantidade": 800.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 3.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "azeite",
+          "quantidade": 150.0,
+          "unidade": "ml"
+        },
+        {
+          "ingredienteId": "azeitona-preta",
+          "quantidade": 120.0,
+          "unidade": "g"
+        }
+      ]
+    },
+    {
+      "id": "bacalhau-com-batata",
+      "ordemCategoria": 2,
+      "categoria": "Gourmet de barranco",
+      "nome": "bacalhau com batata",
+      "rendimento": 6.0,
+      "modoPreparo": "Cozinhar o bacalhau com alho. Cozinhar batatas, esmagar e misturar com metade da manteiga. Cozinhar o alho poró com o resto da manteiga. Misturar tudo, cobrir com queijo e gratinar.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 3.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "alho-poro",
+          "quantidade": 3.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "bacalhau-desfiado",
+          "quantidade": 500.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "batata",
+          "quantidade": 800.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "creme-de-leite",
+          "quantidade": 300.0,
+          "unidade": "ml"
+        },
+        {
+          "ingredienteId": "manteiga",
+          "quantidade": 100.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "queijo-suico-ralado",
+          "quantidade": 100.0,
+          "unidade": "g"
+        }
+      ]
+    },
+    {
+      "id": "carne-seca-com-abobora",
+      "ordemCategoria": 2,
+      "categoria": "Gourmet de barranco",
+      "nome": "carne seca com abóbora",
+      "rendimento": 6.0,
+      "modoPreparo": "Dourar bacon. Cebola e alho. Carne seca. Cozinhar até ficar macia. Acrescentar abóbora. Acompanha arroz.",
+      "ingredientes": [
+        {
+          "ingredienteId": "abobora",
+          "quantidade": 500.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "alho",
+          "quantidade": 2.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "arroz",
+          "quantidade": 0.25,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "bacon",
+          "quantidade": 100.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "carne-seca",
+          "quantidade": 600.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "oleo",
+          "quantidade": 1.0,
+          "unidade": "colher(es) de sopa"
+        }
+      ]
+    },
+    {
+      "id": "macarrao-ao-sugo",
+      "ordemCategoria": 2,
+      "categoria": "Gourmet de barranco",
+      "nome": "macarrão ao sugo",
+      "rendimento": 2.0,
+      "modoPreparo": "Dourar cebola e alho. Molho de tomate. Engrossar. Cozinhar macarrão. Pegar 1/2 concha da água e colocar no molho. Acrescentar macarrão ao molho.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 2.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "azeite",
+          "quantidade": 2.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 0.25,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "macarrao",
+          "quantidade": 250.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "molho-de-tomate",
+          "quantidade": 300.0,
+          "unidade": "g"
+        }
+      ]
+    },
+    {
+      "id": "macarrao-com-carne-na-lata",
+      "ordemCategoria": 2,
+      "categoria": "Gourmet de barranco",
+      "nome": "macarrão com carne na lata",
+      "rendimento": 4.0,
+      "modoPreparo": "Esquentar a carne na lata e remover excesso de banha. Calabresa. Cebola e Alho. Extrato de tomate. Separar. Cozinhar macarrão. Acrescentar macarrão ao molho.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 3.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "calabresa",
+          "quantidade": 250.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "carne-na-lata",
+          "quantidade": 250.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "extrato-de-tomate",
+          "quantidade": 1.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "macarrao",
+          "quantidade": 500.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "molho-de-tomate",
+          "quantidade": 340.0,
+          "unidade": "g"
+        }
+      ]
+    },
+    {
+      "id": "feijoada-zapt",
+      "ordemCategoria": 3,
+      "categoria": "Paulista nutella",
+      "nome": "feijoada zapt",
+      "rendimento": 2.0,
+      "modoPreparo": "Dourar bacon. Cebola e alho. Carnes defumadas. Feijoada. Sirva com arroz e farofa.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 1.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "arroz",
+          "quantidade": 0.5,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "bacon",
+          "quantidade": 30.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "calabresa",
+          "quantidade": 50.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "copa-defumada",
+          "quantidade": 50.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "costela-defumada",
+          "quantidade": 50.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "farofa",
+          "quantidade": 0.2,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "feijoada-zapt",
+          "quantidade": 500.0,
+          "unidade": "g"
+        }
+      ]
+    },
+    {
+      "id": "risoto-de-bacalhau",
+      "ordemCategoria": 3,
+      "categoria": "Paulista nutella",
+      "nome": "risoto de bacalhau",
+      "rendimento": 5.0,
+      "modoPreparo": "Dessalgar bacalhau. Dourar cebola. Alho-poró, salsão e alho. Azeite e arroz. Vinho. Tomate, bacalhau. Pressão por 4 minutos. Esfriar panela no rio. Volte a panela pro fogo até dar o ponto. Misture a manteiga.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 2.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "alho-poro",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "arroz-para-risoto",
+          "quantidade": 1.5,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "azeite",
+          "quantidade": 3.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "bacalhau-desfiado",
+          "quantidade": 500.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 0.5,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "manteiga",
+          "quantidade": 2.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "talo-de-salsao",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "tomate",
+          "quantidade": 5.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "vinho-tinto",
+          "quantidade": 0.5,
+          "unidade": "xícara(s)"
+        }
+      ]
+    },
+    {
+      "id": "risoto-de-funghi",
+      "ordemCategoria": 3,
+      "categoria": "Paulista nutella",
+      "nome": "risoto de funghi",
+      "rendimento": 5.0,
+      "modoPreparo": "Hidrate o funghi. Misture o caldo de legumes com o funghi. Fatie os funghi. Doure cebola na manteiga. Funghi e alho. Arroz. Vinho. Cozinhe no caldo. Manteiga e parmesão.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho",
+          "quantidade": 1.0,
+          "unidade": "dente(s)"
+        },
+        {
+          "ingredienteId": "arroz-para-risoto",
+          "quantidade": 2.0,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "caldo-de-legumes",
+          "quantidade": 1.5,
+          "unidade": "litro"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 0.5,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "funghi-seco",
+          "quantidade": 1.0,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "manteiga",
+          "quantidade": 4.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "parmesao",
+          "quantidade": 0.33,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "vinho-branco",
+          "quantidade": 0.5,
+          "unidade": "xícara(s)"
+        }
+      ]
+    },
+    {
+      "id": "risoto-de-limao-siciliano",
+      "ordemCategoria": 3,
+      "categoria": "Paulista nutella",
+      "nome": "risoto de limão siciliano",
+      "rendimento": 5.0,
+      "modoPreparo": "Misturar raspas e caldo do limão, gema do ovo e parmesão. Doure salsão, cebola e alho-poró. Arroz. Vinho. Cozinhar no caldo de legumes. Misturar manteiga e mistura.",
+      "ingredientes": [
+        {
+          "ingredienteId": "alho-poro",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "arroz-para-risoto",
+          "quantidade": 2.0,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "azeite",
+          "quantidade": 2.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "caldo-de-legumes",
+          "quantidade": 1.5,
+          "unidade": "litro"
+        },
+        {
+          "ingredienteId": "cebola",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "limao-siciliano",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "manteiga",
+          "quantidade": 2.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "gema-de-ovo",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "parmesao",
+          "quantidade": 1.0,
+          "unidade": "xícara(s)"
+        },
+        {
+          "ingredienteId": "talo-de-salsao",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "vinho-branco",
+          "quantidade": 0.5,
+          "unidade": "xícara(s)"
+        }
+      ]
+    },
+    {
+      "id": "talharim-ao-limao-siciliano",
+      "ordemCategoria": 3,
+      "categoria": "Paulista nutella",
+      "nome": "talharim ao limão siciliano",
+      "rendimento": 2.0,
+      "modoPreparo": "Cozinhar o macarrão. Separado, misturar parmesão, suco de limão, raspas da casca e azeite. Pegar 1/2 concha da água e colocar no molho. Acrescentar macarrão ao molho.",
+      "ingredientes": [
+        {
+          "ingredienteId": "azeite",
+          "quantidade": 4.0,
+          "unidade": "colher(es) de sopa"
+        },
+        {
+          "ingredienteId": "limao-siciliano",
+          "quantidade": 1.0,
+          "unidade": "unid"
+        },
+        {
+          "ingredienteId": "macarrao",
+          "quantidade": 160.0,
+          "unidade": "g"
+        },
+        {
+          "ingredienteId": "parmesao",
+          "quantidade": 1.0,
+          "unidade": "xícara(s)"
+        }
+      ]
+    }
+  ]
+}

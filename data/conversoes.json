@@ -1,0 +1,304 @@
+{
+  "conversoes": [
+    {
+      "ingredienteId": "abobora",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "alho",
+      "unidadeOrigem": "dente(s)",
+      "unidadeCalculo": "dente(s)",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "alho-poro",
+      "unidadeOrigem": "unid",
+      "unidadeCalculo": "unid",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "arroz",
+      "unidadeOrigem": "xícara(s)",
+      "unidadeCalculo": "g",
+      "fator": 290.0
+    },
+    {
+      "ingredienteId": "arroz-para-risoto",
+      "unidadeOrigem": "xícara(s)",
+      "unidadeCalculo": "g",
+      "fator": 290.0
+    },
+    {
+      "ingredienteId": "azeite",
+      "unidadeOrigem": "colher(es) de sopa",
+      "unidadeCalculo": "ml",
+      "fator": 14.0
+    },
+    {
+      "ingredienteId": "azeite",
+      "unidadeOrigem": "ml",
+      "unidadeCalculo": "ml",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "azeitona-preta",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "bacalhau-desfiado",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "bacon",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "banha",
+      "unidadeOrigem": "colher(es) de sopa",
+      "unidadeCalculo": "ml",
+      "fator": 10.0
+    },
+    {
+      "ingredienteId": "batata",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "batata-palha",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "calabresa",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "caldo-de-legumes",
+      "unidadeOrigem": "litro",
+      "unidadeCalculo": "litro",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "carne-na-lata",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "carne-seca",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "cebola",
+      "unidadeOrigem": "unid",
+      "unidadeCalculo": "unid",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "copa-defumada",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "costela-defumada",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "creme-de-leite",
+      "unidadeOrigem": "ml",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "curcuma",
+      "unidadeOrigem": "colher(es) de sopa",
+      "unidadeCalculo": "g",
+      "fator": 10.0
+    },
+    {
+      "ingredienteId": "extrato-de-tomate",
+      "unidadeOrigem": "colher(es) de sopa",
+      "unidadeCalculo": "g",
+      "fator": 20.0
+    },
+    {
+      "ingredienteId": "farofa",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "feijao-fradinho-pronto",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "feijoada-zapt",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "folha-de-louro",
+      "unidadeOrigem": "unid",
+      "unidadeCalculo": "unid",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "frango-defumado",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "funghi-seco",
+      "unidadeOrigem": "xícara(s)",
+      "unidadeCalculo": "g",
+      "fator": 50.0
+    },
+    {
+      "ingredienteId": "gema-de-ovo",
+      "unidadeOrigem": "unid",
+      "unidadeCalculo": "unid",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "limao",
+      "unidadeOrigem": "unid",
+      "unidadeCalculo": "unid",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "limao-siciliano",
+      "unidadeOrigem": "unid",
+      "unidadeCalculo": "unid",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "macarrao",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "manteiga",
+      "unidadeOrigem": "colher(es) de sopa",
+      "unidadeCalculo": "g",
+      "fator": 15.0
+    },
+    {
+      "ingredienteId": "manteiga",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "milho",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "milho",
+      "unidadeOrigem": "sachê 340g",
+      "unidadeCalculo": "g",
+      "fator": 340.0
+    },
+    {
+      "ingredienteId": "molho-de-tomate",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "oleo",
+      "unidadeOrigem": "colher(es) de sopa",
+      "unidadeCalculo": "g",
+      "fator": 14.0
+    },
+    {
+      "ingredienteId": "ovo",
+      "unidadeOrigem": "unid",
+      "unidadeCalculo": "unid",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "parmesao",
+      "unidadeOrigem": "xícara(s)",
+      "unidadeCalculo": "g",
+      "fator": 80.0
+    },
+    {
+      "ingredienteId": "peixe",
+      "unidadeOrigem": "filés",
+      "unidadeCalculo": "g",
+      "fator": 200.0
+    },
+    {
+      "ingredienteId": "pimentao",
+      "unidadeOrigem": "xícara(s)",
+      "unidadeCalculo": "unid",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "provolone",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "queijo-suico-ralado",
+      "unidadeOrigem": "g",
+      "unidadeCalculo": "g",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "ramo-de-tomilho",
+      "unidadeOrigem": "ramos",
+      "unidadeCalculo": "unid",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "talo-de-salsao",
+      "unidadeOrigem": "unid",
+      "unidadeCalculo": "unid",
+      "fator": 1.0
+    },
+    {
+      "ingredienteId": "tomate",
+      "unidadeOrigem": "unid",
+      "unidadeCalculo": "g",
+      "fator": 150.0
+    },
+    {
+      "ingredienteId": "vinho-branco",
+      "unidadeOrigem": "xícara(s)",
+      "unidadeCalculo": "ml",
+      "fator": 240.0
+    },
+    {
+      "ingredienteId": "vinho-tinto",
+      "unidadeOrigem": "xícara(s)",
+      "unidadeCalculo": "ml",
+      "fator": 240.0
+    }
+  ]
+}

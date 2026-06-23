@@ -1,0 +1,388 @@
+{
+  "categorias": [
+    "Hortifruti",
+    "Proteínas",
+    "Carboidratos",
+    "Temperos",
+    "Laticínios",
+    "Conservas"
+  ],
+  "ingredientes": [
+    {
+      "id": "arroz",
+      "nome": "arroz",
+      "categoria": "Carboidratos",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "kg",
+      "fatorCompra": 0.001
+    },
+    {
+      "id": "arroz-para-risoto",
+      "nome": "arroz para risoto",
+      "categoria": "Carboidratos",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "kg",
+      "fatorCompra": 0.001
+    },
+    {
+      "id": "batata-palha",
+      "nome": "batata palha",
+      "categoria": "Carboidratos",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "pacote 120g",
+      "fatorCompra": 0.008333333333333333
+    },
+    {
+      "id": "farofa",
+      "nome": "farofa",
+      "categoria": "Carboidratos",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "pacote 400g",
+      "fatorCompra": 0.0025
+    },
+    {
+      "id": "macarrao",
+      "nome": "macarrão",
+      "categoria": "Carboidratos",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "pacote 500g",
+      "fatorCompra": 0.002
+    },
+    {
+      "id": "azeitona-preta",
+      "nome": "azeitona preta",
+      "categoria": "Conservas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "caldo-de-legumes",
+      "nome": "caldo de legumes",
+      "categoria": "Conservas",
+      "unidadeCalculo": "litro",
+      "unidadeCompra": "litro",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "extrato-de-tomate",
+      "nome": "extrato de tomate",
+      "categoria": "Conservas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "lata 120g",
+      "fatorCompra": 0.008333333333333333
+    },
+    {
+      "id": "feijoada-zapt",
+      "nome": "feijoada zapt",
+      "categoria": "Conservas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "pacote 500g",
+      "fatorCompra": 0.002
+    },
+    {
+      "id": "feijao-fradinho-pronto",
+      "nome": "feijão fradinho pronto",
+      "categoria": "Conservas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "tetra pak 380g",
+      "fatorCompra": 0.002631578947368421
+    },
+    {
+      "id": "funghi-seco",
+      "nome": "funghi seco",
+      "categoria": "Conservas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "milho",
+      "nome": "milho",
+      "categoria": "Conservas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "sachê 340g",
+      "fatorCompra": 0.0029411764705882353
+    },
+    {
+      "id": "molho-de-tomate",
+      "nome": "molho de tomate",
+      "categoria": "Conservas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "sachê 340g",
+      "fatorCompra": 0.0029411764705882353
+    },
+    {
+      "id": "vinho-branco",
+      "nome": "vinho branco",
+      "categoria": "Conservas",
+      "unidadeCalculo": "ml",
+      "unidadeCompra": "garrafa 750ml",
+      "fatorCompra": 0.0013333333333333333
+    },
+    {
+      "id": "vinho-tinto",
+      "nome": "vinho tinto",
+      "categoria": "Conservas",
+      "unidadeCalculo": "ml",
+      "unidadeCompra": "garrafa 750ml",
+      "fatorCompra": 0.0013333333333333333
+    },
+    {
+      "id": "abobora",
+      "nome": "abóbora",
+      "categoria": "Hortifruti",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "unidade",
+      "fatorCompra": 0.0005
+    },
+    {
+      "id": "alho",
+      "nome": "alho",
+      "categoria": "Hortifruti",
+      "unidadeCalculo": "dente(s)",
+      "unidadeCompra": "cabeça(s)",
+      "fatorCompra": 0.1
+    },
+    {
+      "id": "alho-poro",
+      "nome": "alho-poró",
+      "categoria": "Hortifruti",
+      "unidadeCalculo": "unid",
+      "unidadeCompra": "unid",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "batata",
+      "nome": "batata",
+      "categoria": "Hortifruti",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "cebola",
+      "nome": "cebola",
+      "categoria": "Hortifruti",
+      "unidadeCalculo": "unid",
+      "unidadeCompra": "unid",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "limao",
+      "nome": "limão",
+      "categoria": "Hortifruti",
+      "unidadeCalculo": "unid",
+      "unidadeCompra": "unid",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "limao-siciliano",
+      "nome": "limão siciliano",
+      "categoria": "Hortifruti",
+      "unidadeCalculo": "unid",
+      "unidadeCompra": "unid",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "pimentao",
+      "nome": "pimentão",
+      "categoria": "Hortifruti",
+      "unidadeCalculo": "unid",
+      "unidadeCompra": "unid",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "talo-de-salsao",
+      "nome": "talo de salsão",
+      "categoria": "Hortifruti",
+      "unidadeCalculo": "unid",
+      "unidadeCompra": "unid",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "tomate",
+      "nome": "tomate",
+      "categoria": "Hortifruti",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "creme-de-leite",
+      "nome": "creme de leite",
+      "categoria": "Laticínios",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "manteiga",
+      "nome": "manteiga",
+      "categoria": "Laticínios",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "parmesao",
+      "nome": "parmesão",
+      "categoria": "Laticínios",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "pacote 50g",
+      "fatorCompra": 0.02
+    },
+    {
+      "id": "provolone",
+      "nome": "provolone",
+      "categoria": "Laticínios",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "queijo-suico-ralado",
+      "nome": "queijo suíço ralado",
+      "categoria": "Laticínios",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "bacalhau-desfiado",
+      "nome": "bacalhau desfiado",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "bacon",
+      "nome": "bacon",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "calabresa",
+      "nome": "calabresa",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "carne-na-lata",
+      "nome": "carne na lata",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "carne-seca",
+      "nome": "carne seca",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "copa-defumada",
+      "nome": "copa defumada",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "costela-defumada",
+      "nome": "costela defumada",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "frango-defumado",
+      "nome": "frango defumado",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "gema-de-ovo",
+      "nome": "gema de ovo",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "unid",
+      "unidadeCompra": "unid",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "ovo",
+      "nome": "ovo",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "unid",
+      "unidadeCompra": "unid",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "peixe",
+      "nome": "peixe",
+      "categoria": "Proteínas",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "azeite",
+      "nome": "azeite",
+      "categoria": "Temperos",
+      "unidadeCalculo": "ml",
+      "unidadeCompra": "ml",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "banha",
+      "nome": "banha",
+      "categoria": "Temperos",
+      "unidadeCalculo": "ml",
+      "unidadeCompra": "ml",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "curcuma",
+      "nome": "cúrcuma",
+      "categoria": "Temperos",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "g",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "folha-de-louro",
+      "nome": "folha de louro",
+      "categoria": "Temperos",
+      "unidadeCalculo": "unid",
+      "unidadeCompra": "unid",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "ramo-de-tomilho",
+      "nome": "ramo de tomilho",
+      "categoria": "Temperos",
+      "unidadeCalculo": "unid",
+      "unidadeCompra": "unid",
+      "fatorCompra": 1.0
+    },
+    {
+      "id": "oleo",
+      "nome": "óleo",
+      "categoria": "Temperos",
+      "unidadeCalculo": "g",
+      "unidadeCompra": "embalagem 900ml",
+      "fatorCompra": 0.0011111111111111111
+    }
+  ]
+}

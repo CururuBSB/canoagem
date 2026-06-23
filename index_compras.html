@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Planejador de refeições e lista de compras para expedições de canoagem.">
+    <title>Despensa de Bordo</title>
+    <link rel="stylesheet" href="css/index_compras.css">
+    <script src="js/index_compras.js" defer></script>
+  </head>
+  <body data-page="planner">
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="index_compras.html" aria-label="Despensa de Bordo — início">
+          <span class="brand-mark" aria-hidden="true">≈</span>
+          <span>Despensa de Bordo</span>
+        </a>
+        <p class="eyebrow">Planejador de expedição</p>
+      </div>
+    </header>
+
+    <main class="shell page-main">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="kicker">Comida boa, remo firme</p>
+          <h1 id="page-title">Monte o cardápio da viagem</h1>
+          <p class="hero-copy">Informe o tamanho do grupo e escolha uma refeição para cada dia de expedição.</p>
+        </div>
+        <div class="river-lines" aria-hidden="true"><span></span><span></span><span></span></div>
+      </section>
+
+      <section class="planner-panel" aria-label="Dados da expedição">
+        <div class="field">
+          <label for="participants">Participantes</label>
+          <input id="participants" name="participants" type="number" min="1" step="1" inputmode="numeric" value="1">
+        </div>
+        <div class="field">
+          <label for="days">Dias de expedição</label>
+          <input id="days" name="days" type="number" min="1" step="1" inputmode="numeric" value="1">
+        </div>
+        <div id="meal-status" class="meal-status" role="status" aria-live="polite">
+          <span class="status-label">Refeições planejadas</span>
+          <strong><span id="planned-count">0</span> de <span id="days-count">1</span></strong>
+          <span id="status-message" class="status-message">Escolha as refeições.</span>
+        </div>
+      </section>
+
+      <section class="recipes-section" aria-labelledby="recipes-title">
+        <div class="section-heading">
+          <div>
+            <p class="kicker">Cardápio</p>
+            <h2 id="recipes-title">Receitas da canoa</h2>
+          </div>
+          <button id="clear-plan" class="text-button" type="button">Limpar seleção</button>
+        </div>
+        <div id="recipes-list" class="recipes-list" aria-live="polite">
+          <p class="loading">Carregando receitas…</p>
+        </div>
+      </section>
+
+      <div class="action-bar">
+        <div>
+          <span class="action-caption">Tudo escolhido?</span>
+          <strong>Gere a lista consolidada.</strong>
+        </div>
+        <button id="calculate" class="button button-primary" type="button">Calcular Lista de Compras <span aria-hidden="true">→</span></button>
+      </div>
+    </main>
+
+    <footer class="site-footer"><div class="shell">Feito para organizar a comida antes de colocar a canoa na água.</div></footer>
+  </body>
+</html>
