@@ -65,6 +65,12 @@ function formatQuantity(value) {
   return numberFormatter.format(Number(value));
 }
 
+function formatRecipeQuantity(value) {
+  return numberFormatter.format(
+    Number(value.toFixed(1))
+  );
+}
+
 function categoryRank(category, categoryOrder) {
   const index = categoryOrder.indexOf(category);
   return index === -1 ? categoryOrder.length : index;
@@ -220,6 +226,11 @@ async function initRecipe() {
     ]);
     const recipe = recipeData.receitas.find((item) => item.id === recipeId);
     if (!recipe) throw new Error("Receita não encontrada.");
+    
+    const plan = readPlan();
+    const participantes = plan.participants || recipe.rendimento;
+    const fator = participantes / recipe.rendimento;
+
     const ingredients = new Map(ingredientData.ingredientes.map((item) => [item.id, item]));
 
     document.title = `${displayName(recipe.nome)} — Despensa de Bordo`;
@@ -229,7 +240,8 @@ async function initRecipe() {
     header.append(
       createElement("p", "recipe-badge", recipe.categoria),
       createElement("h1", "", displayName(recipe.nome)),
-      createElement("p", "recipe-serving", `Rendimento: ${formatQuantity(recipe.rendimento)} ${recipe.rendimento === 1 ? "porção" : "porções"}`),
+      //createElement("p", "recipe-serving", `Rendimento: ${formatQuantity(recipe.rendimento)} ${recipe.rendimento === 1 ? "porção" : "porções"}`),
+      createElement("p", "recipe-serving", `Receita ajustada para: ${formatQuantity(participantes)} pessoa(s) - Base: ${formatQuantity(recipe.rendimento)} pessoas`),
     );
 
     const layout = createElement("div", "recipe-detail-grid");
@@ -239,9 +251,12 @@ async function initRecipe() {
     recipe.ingredientes.forEach((item) => {
       const metadata = ingredients.get(item.ingredienteId);
       const line = createElement("li", "");
+      const quantidadeAjustada = item.quantidade * fator;
       line.append(
         createElement("span", "ingredient-name", displayName(metadata?.nome || item.ingredienteId)),
-        createElement("span", "ingredient-measure", `${formatQuantity(item.quantidade)} ${item.unidade}`),
+        
+        //createElement("span", "ingredient-measure", `${formatQuantity(item.quantidade)} ${item.unidade}`),
+        createElement("span", "ingredient-measure", `${formatRecipeQuantity(quantidadeAjustada)} ${item.unidade}`),
       );
       ingredientList.append(line);
     });
