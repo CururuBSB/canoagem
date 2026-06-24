@@ -24,6 +24,14 @@ function readPlan() {
   }
 }
 
+function safePrint() {
+  requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.print();
+      });
+  });
+}
+
 function savePlan(plan) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(plan));
 }
@@ -289,23 +297,15 @@ async function initRecipe() {
 async function initRecipeBook() {
   const container = document.querySelector("#recipe-book");
    
-
   document
   .querySelector("#print-book")
   .addEventListener("click", (event) => {
-
     event.preventDefault();
     event.stopPropagation();
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        window.print();
-      });
+    safePrint();    
     });
-
   });
-   
- 
+    
   const plan = readPlan();
  
   try {
@@ -444,16 +444,9 @@ async function initShopping() {
   document
   .querySelector("#print-list")
   .addEventListener("click", (event) => {
-
     event.preventDefault();
     event.stopPropagation();
-
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        window.print();
-      });
-    });
-
+    safePrint();
   });
 
   try {
