@@ -303,8 +303,7 @@ async function initRecipeBook() {
     event.preventDefault();
     event.stopPropagation();
     safePrint();    
-    });
-  });
+});
     
   const plan = readPlan();
  
@@ -517,4 +516,3 @@ if (page === "planner") initPlanner();
 if (page === "recipe") initRecipe();
 if (page === "shopping") initShopping();
 if (page === "recipe-book") initRecipeBook();
-
