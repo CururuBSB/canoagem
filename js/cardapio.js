@@ -201,6 +201,18 @@ async function initPlanner() {
     window.open("compras.html", "_blank", "noopener");
   });
 
+  document.querySelector("#recipe-book").addEventListener("click", () => {
+    updateStatus();
+
+    if (selectedTotal() === 0) {
+      statusMessage.textContent = "Selecione ao menos uma receita para consultar.";
+      status.classList.add("is-warning");
+      status.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+    window.open("livro.html", "_blank", "noopener");
+  });
+
   try {
     const data = await fetchJson(DATA_PATHS.recipes);
     recipes = data.receitas;
@@ -269,6 +281,112 @@ async function initRecipe() {
     );
     layout.append(ingredientSection, instructions);
     container.append(header, layout);
+  } catch (error) {
+    showError(container, error.message);
+  }
+}
+
+async function initRecipeBook() {
+  const container = document.querySelector("#recipe-book");
+   
+  /*
+  document
+    .querySelector("#print-book")
+    .addEventListener("click", () => window.print());
+    */
+
+  const plan = readPlan();
+ 
+  try {
+    const [recipeData, ingredientData] = await Promise.all([
+      fetchJson(DATA_PATHS.recipes),
+      fetchJson(DATA_PATHS.ingredients),
+    ]);
+
+    const ingredients = new Map(
+      ingredientData.ingredientes.map((item) => [item.id, item])
+    );
+
+    const selectedRecipes = recipeData.receitas.filter(
+      (recipe) => (plan.selections[recipe.id] || 0) > 0
+    );
+
+    container.replaceChildren();
+
+    if (selectedRecipes.length === 0) {
+      container.append(
+        createElement("p", "", "Nenhuma receita selecionada.")
+      );
+      return;
+    }
+
+    selectedRecipes.forEach((recipe) => {
+      const fator = plan.participants / recipe.rendimento;
+
+      const article = createElement("article", "recipe-detail");
+
+      const header = createElement("header", "recipe-detail-header");
+      header.append(
+        //createElement("p", "recipe-badge", recipe.categoria),
+        createElement("h1", "", displayName(recipe.nome)),
+        createElement(
+          "p",
+          "recipe-serving",
+          `Receita para ${plan.participants} remadores`
+        )
+      );
+
+      const ingredientSection = createElement("section", "recipe-card");
+      ingredientSection.append(createElement("h3", "", "Ingredientes"));
+
+      const ingredientList = createElement("ul", "ingredient-list");
+
+      recipe.ingredientes.forEach((item) => {
+        const metadata = ingredients.get(item.ingredienteId);
+
+        const quantidadeAjustada = item.quantidade * fator;
+
+        const line = createElement("li", "");
+
+        line.append(
+          createElement(
+            "span",
+            "ingredient-name",
+            displayName(metadata?.nome || item.ingredienteId)
+          ),
+          createElement(
+            "span",
+            "ingredient-measure",
+            `${formatQuantity(quantidadeAjustada)} ${item.unidade}`
+          )
+        );
+
+        ingredientList.append(line);
+      });
+
+      ingredientSection.append(ingredientList);
+
+      const instructions = createElement(
+        "section",
+        "recipe-card preparation-card"
+      );
+
+      instructions.append(
+        createElement("h3", "", "Modo de preparo"),
+        createElement(
+          "p",
+          "preparation-text",
+          recipe.modoPreparo || "Modo de preparo não informado."
+        )
+      );
+
+      const layout = createElement("div", "recipe-detail-grid");
+      layout.append(ingredientSection, instructions);
+
+      article.append(header, layout);
+
+      container.append(article);
+    });
   } catch (error) {
     showError(container, error.message);
   }
@@ -382,3 +500,5 @@ const page = document.body.dataset.page;
 if (page === "planner") initPlanner();
 if (page === "recipe") initRecipe();
 if (page === "shopping") initShopping();
+if (page === "recipe-book") initRecipeBook();
+

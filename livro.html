@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Receita — Despensa de Bordo</title>
+    <link rel="stylesheet" href="css/cardapio.css">
+    <script src="js/cardapio.js" defer></script>
+  </head>
+  <body data-page="recipe-book">
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="cardapio.html"><span class="brand-mark" aria-hidden="true">≈</span><span>Despensa de Bordo</span></a>
+        <p class="eyebrow">Caderno de receitas</p>
+      </div>
+    </header>
+    <main class="shell page-main recipe-page">
+      <div class="page-actions">
+        <a class="back-link" href="cardapio.html">
+          ← Voltar ao planejamento
+        </a>
+        
+        <!--
+        <button id="print-book" class="button button-secondary" type="button">
+          Imprimir
+        </button>
+        -->
+<button
+  id="print-book"
+  class="button button-secondary"
+  type="button"
+  onclick="window.print()">
+  Imprimir
+</button>
+
+
+      </div>
+      <section id="recipe-book">
+        <p class="loading">Carregando receitas...</p>
+      </section>
+    </main>
+  </body>
+</html>
