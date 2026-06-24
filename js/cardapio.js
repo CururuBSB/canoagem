@@ -289,9 +289,22 @@ async function initRecipe() {
 async function initRecipeBook() {
   const container = document.querySelector("#recipe-book");
    
+
   document
-    .querySelector("#print-book")
-    .addEventListener("click", () => window.print());
+  .querySelector("#print-book")
+  .addEventListener("click", (event) => {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.print();
+      });
+    });
+
+  });
+   
  
   const plan = readPlan();
  
@@ -428,8 +441,20 @@ async function initShopping() {
   const summary = document.querySelector("#trip-summary");
   const plan = readPlan();
 
-  document.querySelector("#print-list").addEventListener("click", () => window.print());
-  document.querySelector("#pdf-list").addEventListener("click", () => window.print());
+  document
+  .querySelector("#print-list")
+  .addEventListener("click", (event) => {
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        window.print();
+      });
+    });
+
+  });
 
   try {
     const [recipeData, ingredientData, conversionData] = await Promise.all([
