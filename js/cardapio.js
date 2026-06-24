@@ -289,12 +289,10 @@ async function initRecipe() {
 async function initRecipeBook() {
   const container = document.querySelector("#recipe-book");
    
-  /*
   document
     .querySelector("#print-book")
     .addEventListener("click", () => window.print());
-    */
-
+ 
   const plan = readPlan();
  
   try {
