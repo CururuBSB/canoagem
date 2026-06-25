@@ -340,5 +340,27 @@ h1, h2, h3 {
   .shopping-table th { color: #333; background: #eee; }
   .shopping-table td { padding-block: 7px; }
   .print-footer { display: block; margin-top: 22px; padding-top: 8px; border-top: 1px solid #bbb; color: #666; font-size: 8pt; }
-  .recipe-card { margin-bottom: 5mm; }
+  .recipe-card { margin-bottom: 2mm; padding: 5px; border:none; border-radius: 0; background: transparent; } 
+  .recipe-card h2, .recipe-card h3 { font-size: 11pt; font-weight: 600; margin-bottom: 4px; }
+  .recipe-detail-header { padding: 0 0 3mm; margin-bottom: 0mm; break-inside: avoid; page-break-inside: avoid; break-inside: auto !important; page-break-inside: auto !important; }
+  .recipe-detail-header h1 { font-size: 16pt; margin: 0mm 0 0mm; break-after: avoid; page-break-after: avoid; }
+  .recipe-serving { font-size: 9pt; font-weight: 400; }
+  .recipe-detail-grid { padding-top: 0; }
+  .ingredient-list li { padding: 2px 0; }
+  .preparation-text { line-height: 1.35; }
+  #recipe-book .recipe-detail {
+    margin-top: 0px !important;
+    padding-top: 10px !important;
+    padding-bottom: 0px !important;
+    border-bottom: 1px solid #bbb;
+    margin-bottom: 0px !important;
+    break-inside: auto !important;
+    page-break-inside: auto !important;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  #recipe-book { display: block !important;}
+  .recipes-section { padding-top: 10px; }
 }
+
