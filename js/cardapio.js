@@ -488,10 +488,15 @@ async function initShopping() {
         const section = createElement("section", "shopping-category");
         section.append(createElement("h2", "", category));
         const table = createElement("table", "shopping-table");
+        /* Substituição do cabeçalho da tabela por um elemento thead oculto para impressão
         const head = document.createElement("thead");
         const headerRow = document.createElement("tr");
         ["Ingrediente", "Quantidade", "Unidade de compra"].forEach((label) => headerRow.append(createElement("th", "", label)));
         head.append(headerRow);
+        */
+        const head = document.createElement("thead");
+        head.style.display = "none";
+        /* Fim da substituição do cabeçalho da tabela */
         const body = document.createElement("tbody");
         items.forEach((item) => {
           const row = document.createElement("tr");

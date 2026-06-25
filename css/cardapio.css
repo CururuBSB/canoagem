@@ -296,6 +296,7 @@ h1, h2, h3 {
   border-bottom: 2px solid var(--line);
 }
 
+/* Ajustes para tablets */
 @media (max-width: 820px) {
   .hero { grid-template-columns: 1fr; }
   .river-lines { display: none; }
@@ -307,6 +308,7 @@ h1, h2, h3 {
   .recipe-detail-grid { grid-template-columns: 1fr; }
 }
 
+/* Ajustes exclusivos para smartphones */
 @media (max-width: 560px) {
   .shell { width: min(calc(100% - 24px), var(--shell)); }
   .header-inner { min-height: 62px; }
@@ -323,6 +325,8 @@ h1, h2, h3 {
   .shopping-table th:nth-child(2), .shopping-table td:nth-child(2) { width: 90px; }
   .shopping-table th:nth-child(3), .shopping-table td:nth-child(3) { width: 130px; }
   .shopping-table th, .shopping-table td { padding-inline: 8px; }
+  .action-buttons { flex-direction: column; }
+  .action-buttons .button { width: 100%; }
 }
 
 @media print {
@@ -333,12 +337,12 @@ h1, h2, h3 {
   .page-actions { display: none !important; }
   .shell { width: 100%; }
   .page-main { padding: 0; }
-  .shopping-heading { padding-bottom: 14px; }
+  .shopping-heading { padding-bottom: 6px; }
   .shopping-heading h1 { font-size: 27pt; }
   .shopping-list { gap: 17px; padding-top: 18px; }
-  .shopping-category h2 { color: #111; }
-  .shopping-table th { color: #333; background: #eee; }
-  .shopping-table td { padding-block: 7px; }
+  .shopping-category h2 { color: #111; font-size: 10pt; font-weight: 600; margin: 0 0 2px; }
+  .shopping-table th { color: #333; background: #eee; padding: 4px 6px; font-size: 9pt;}
+  .shopping-table td { padding-block: 2px; border-bottom: 1px solid #ddd; background: transparent; font-size: 9pt; }
   .print-footer { display: block; margin-top: 22px; padding-top: 8px; border-top: 1px solid #bbb; color: #666; font-size: 8pt; }
   .recipe-card { margin-bottom: 2mm; padding: 5px; border:none; border-radius: 0; background: transparent; } 
   .recipe-card h2, .recipe-card h3 { font-size: 11pt; font-weight: 600; margin-bottom: 4px; }
@@ -362,5 +366,6 @@ h1, h2, h3 {
   }
   #recipe-book { display: block !important;}
   .recipes-section { padding-top: 10px; }
+  .trip-summary { font-size: 8pt; }
 }
 
